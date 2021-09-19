@@ -1,7 +1,6 @@
 import webpack, { Stats } from 'webpack';
 import { createWebpackConfig } from '../config/createWebpackConfig';
 import { log } from '../lib/log';
-import { promisify } from 'util';
 
 export async function main() {
   log(`Creating production build ...`);
