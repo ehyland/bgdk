@@ -22,28 +22,28 @@ prog
   .command('dev')
   .describe('Start dev server')
   .action(async () => {
-    await require('../commands/dev').main();
+    await require('bgdk/commands/dev').main();
   });
 
 prog
   .command('build')
   .describe('Create a production build')
   .action(async () => {
-    await require('../commands/build').main();
+    await require('bgdk/commands/build').main();
   });
 
 prog
   .command('create <app-path>')
   .describe('Create a new project with bgdk')
   .action(async (appPath: string) => {
-    await require('../commands/create').main({ appPath });
+    await require('bgdk/commands/create').main({ appPath });
   });
 
 prog
   .command('component <component-path>')
   .describe('Create a new component')
   .action(async (componentPath: string) => {
-    await require('../commands/component').main({ componentPath });
+    await require('bgdk/commands/component').main({ componentPath });
   });
 
 prog.parse(process.argv);

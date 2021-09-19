@@ -3,24 +3,28 @@
   "version": "0.0.1",
   "description": "Create React App for vanilla extract apps",
   "files": [
-    "/bin",
+    "bin.js",
+    "/cli",
     "/dist",
     "/babel-preset",
     "/examples",
     "/examples/*/.gitignore",
     "!/examples/*/yarn.lock",
-    "/templates/"
+    "/templates/",
+    "/commands/"
   ],
   "preconstruct": {
     "entrypoints": [
-      "bin/index.ts"
+      "cli/index.ts",
+      "babel-preset/index.ts",
+      "commands/*.ts"
     ]
   },
   "entrypoints": [
     "/bin/index.ts"
   ],
   "bin": {
-    "bgdk": "./bin/dist/bgdk-bin.cjs.js"
+    "bgdk": "./bin.js"
   },
   "publishConfig": {
     "access": "public"

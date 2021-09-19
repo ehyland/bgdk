@@ -1,5 +1,5 @@
 {
-  "name": "bgdk",
+  "name": "bgdk-monorepo",
   "version": "0.0.1",
   "description": "Baked Goods Development Kit",
   "main": "index.js",
@@ -25,7 +25,8 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "examples/*"
     ],
     "nohoist": []
   },
