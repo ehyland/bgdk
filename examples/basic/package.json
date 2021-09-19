@@ -9,7 +9,7 @@
     "dev": "bgdk dev",
     "build": "bgdk build",
     "component": "bgdk component",
-    "serve": "serve dist --no-clipboard --single -l 3000",
+    "serve": "bgdk serve",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

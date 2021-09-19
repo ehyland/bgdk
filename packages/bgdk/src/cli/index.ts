@@ -33,6 +33,13 @@ prog
   });
 
 prog
+  .command('serve')
+  .describe('Serve app from ./dist')
+  .action(async () => {
+    await require('bgdk/commands/serve').main();
+  });
+
+prog
   .command('create <app-path>')
   .describe('Create a new project with bgdk')
   .action(async (appPath: string) => {
