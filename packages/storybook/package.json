@@ -1,0 +1,43 @@
+{
+  "name": "@bgdk/storybook",
+  "version": "0.0.1",
+  "description": "Storybook for bgdk apps",
+  "main": "dist/bgdk-storybook.cjs.js",
+  "files": [
+    "/dist"
+  ],
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "vanilla-extract",
+    "storybook"
+  ],
+  "author": "Eamon Hyland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ehyland/bgdk/issues"
+  },
+  "homepage": "https://github.com/ehyland/bgdk#readme",
+  "peerDependencies": {
+    "@vanilla-extract/webpack-plugin": "*",
+    "mini-css-extract-plugin": "*"
+  },
+  "devDependencies": {
+    "@vanilla-extract/webpack-plugin": "^2.1.0",
+    "mini-css-extract-plugin": "^2.3.0"
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/builder-webpack5": "^6.3.8",
+    "@storybook/manager-webpack5": "^6.3.8",
+    "@storybook/react": "^6.3.8"
+  }
+}

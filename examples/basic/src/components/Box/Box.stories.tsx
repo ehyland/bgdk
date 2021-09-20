@@ -19,7 +19,7 @@ const Template: Story<BoxProps> = (args) => <Box {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  background: 'amber200',
+  background: 'coolGray800',
   width: 'modal',
   height: 'modal',
 };

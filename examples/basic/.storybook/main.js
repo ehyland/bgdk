@@ -1,4 +1,4 @@
-const { fixStorybookConfig } = require('bgdk');
+const { fixStorybookConfig } = require('@bgdk/storybook');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
