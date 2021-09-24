@@ -9,7 +9,7 @@ export const App = () => (
     <header className={styles.header}>
       <Logo />
       <p>
-        Edit <InlineCode>src/App.tsx</InlineCode> and save to reload.
+        Edit <InlineCode>src/components/App.tsx</InlineCode> and save to reload.
       </p>
       <Link href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React

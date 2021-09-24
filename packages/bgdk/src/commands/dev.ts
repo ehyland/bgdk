@@ -1,4 +1,4 @@
-import webpack, { HotModuleReplacementPlugin } from 'webpack';
+import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import { createWebpackConfig } from '../config/createWebpackConfig';
 import { createWebpackDevServerConfig } from '../config/createWebpackDevServerConfig';
@@ -14,12 +14,10 @@ export async function main() {
 
   const devServerConfig = createWebpackDevServerConfig();
 
-  webpackConfig.plugins!.unshift(new HotModuleReplacementPlugin());
-
   const compiler = webpack(webpackConfig);
-  const devServer = new WebpackDevServer(compiler, devServerConfig);
+  const devServer = new WebpackDevServer(devServerConfig, compiler);
 
-  devServer.listen(3000, () => {
-    log(`bgdk http://localhost:3000`);
-  });
+  await devServer.start();
+
+  log(`bgdk http://${devServerConfig.host}:${devServerConfig.port}`);
 }

@@ -2,6 +2,8 @@ import { compact } from 'lodash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+
 import type { Configuration } from 'webpack';
 import * as paths from './paths';
 
@@ -25,6 +27,7 @@ export function createWebpackConfig({
       new VanillaExtractPlugin(),
       new MiniCssExtractPlugin(),
       new HtmlWebpackPlugin({ template: 'src/index.html' }),
+      dev && new ReactRefreshWebpackPlugin(),
     ]),
     resolve: {
       modules: ['node_modules', paths.src],
@@ -35,7 +38,10 @@ export function createWebpackConfig({
         {
           test: /\.(js|jsx|ts|tsx)$/,
           loader: 'babel-loader',
-          options: { cacheDirectory: true },
+          options: {
+            cacheDirectory: true,
+            plugins: compact([dev && require.resolve('react-refresh/babel')]),
+          },
         },
         {
           test: /\.css$/i,
