@@ -30,6 +30,12 @@ bgdk dev
 bgdk build
 ```
 
+## Serve built app (for local testing only)
+
+```bash
+bgdk serve
+```
+
 ## Generate a component
 
 ```bash
@@ -39,11 +45,12 @@ bgdk component src/component/ComponentName
 ## TODO
 
 - [x] Add project bootstrap command with template
-- [x] Add component generator
+- [ ] Add component generator
 - [x] Add docs to readme
-- [ ] Open source
+- [x] Open source
 - [ ] Setup releases in CI with [changesets](https://github.com/atlassian/changesets)
-- [ ] Break storybook helpers into it's own package
+- [x] Break storybook helpers into it's own package
+- [x] Config preset for babel
 - [ ] Config preset for jest
 - [ ] Config preset for eslint
 - [ ] 🚀 v1
