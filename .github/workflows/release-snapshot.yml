@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@main
         with:
           node-version: 14.x
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         run: yarn --immutable
@@ -23,5 +25,4 @@ jobs:
       - name: Snapshot Release
         run: scripts/publish-snapshot-release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
