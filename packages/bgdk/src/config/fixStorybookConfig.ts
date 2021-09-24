@@ -1,7 +1,7 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
-import type { Configuration } from 'webpack';
-import * as paths from './paths';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { VanillaExtractPlugin } from "@vanilla-extract/webpack-plugin";
+import type { Configuration } from "webpack";
+import * as paths from "./paths";
 
 const customLoaderMatchers = [paths.src, /\.css\.ts$/, /\.vanilla\.css$/];
 
@@ -21,7 +21,7 @@ export function fixStorybookConfig(config: Configuration) {
   // add src loader for js
   config?.module?.rules?.unshift({
     test: /\.(js|jsx|ts|tsx)$/,
-    loader: 'babel-loader',
+    loader: "babel-loader",
     options: { cacheDirectory: true },
     include: customLoaderMatchers,
   });
@@ -29,7 +29,7 @@ export function fixStorybookConfig(config: Configuration) {
   // add src loader for css
   config?.module?.rules?.unshift({
     test: /\.css$/i,
-    use: [MiniCssExtractPlugin.loader, 'css-loader'],
+    use: [MiniCssExtractPlugin.loader, "css-loader"],
     include: customLoaderMatchers,
   });
 
@@ -37,7 +37,7 @@ export function fixStorybookConfig(config: Configuration) {
   config?.plugins?.push(new VanillaExtractPlugin(), new MiniCssExtractPlugin());
 
   // base url
-  config!.resolve!.modules = ['node_modules', paths.src];
+  config!.resolve!.modules = ["node_modules", paths.src];
 
   return config;
 }
