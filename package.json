@@ -1,0 +1,56 @@
+{
+  "name": "bgdk-monorepo",
+  "version": "0.2.0",
+  "description": "Baked Goods Development Kit",
+  "main": "index.js",
+  "repository": "git@github.com:ehyland/bgdk.git",
+  "author": "Eamon Hyland <ehyland90@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "preconstruct dev",
+    "test": "yarn lint",
+    "lint": "manypkg check && prettier --check . && tsc --noEmit",
+    "format": "prettier --write .",
+    "build": "preconstruct build",
+    "build:watch": "preconstruct watch",
+    "postinstall": "preconstruct dev",
+    "add-change": "changeset add",
+    "ci:copy-readme-to-packages": "cp ./README.md ./packages/bgdk/ && cp ./README.md ./packages/storybook/",
+    "ci:version": "changeset version && yarn && yarn format",
+    "ci:release": "yarn ci:copy-readme-to-packages && yarn build && changeset publish",
+    "example": "manypkg run bgdk-basic-example"
+  },
+  "devDependencies": {
+    "@preconstruct/cli": "^2.1.2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "examples/*"
+    ],
+    "nohoist": []
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "volta": {
+    "node": "14.17.6",
+    "yarn": "1.22.11"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@changesets/changelog-github": "^0.4.1",
+    "@changesets/cli": "^2.17.0",
+    "@manypkg/cli": "^0.18.0",
+    "@types/jest": "^27.0.2",
+    "jest": "^27.1.1",
+    "prettier": "^2.4.0",
+    "typescript": "^4.4.3"
+  }
+}

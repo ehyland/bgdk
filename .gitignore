@@ -1,0 +1,4 @@
+dist
+node_modules
+/packages/bgdk/README.md
+/packages/storybook/README.md
