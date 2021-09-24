@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+# manually create the changeset
+echo "---
+'bgdk': patch
+'@bgdk/storybook': patch
+---
+
+Snapshot Release
+" > .changeset/snapshot.md
+
+# bump versions
+yarn changeset version --snapshot dev
+
+# build and publish
+yarn ci:copy-readme-to-packages
+yarn build
+yarn changeset publish --tag dev
