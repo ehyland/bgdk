@@ -5,6 +5,7 @@
   "author": "Eamon Hyland",
   "license": "MIT",
   "description": "My webpack project",
+  "private": true,
   "scripts": {
     "dev": "bgdk dev",
     "build": "bgdk build",
