@@ -1,1 +1,1 @@
-export { createBabelConfig as default } from '../config/createBabelConfig';
+export { createBabelConfig as default } from "../config/createBabelConfig";
