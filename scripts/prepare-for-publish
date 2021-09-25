@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+# copy readmes into packages
+cp ./README.md ./packages/bgdk/
+cp ./README.md ./packages/storybook/
+
+# copy in the example link
+if [ -e "./packages/bgdk/examples" ]; then
+  rm ./packages/bgdk/examples
+fi
+
+cp -r examples ./packages/bgdk/
+
+# build the packages
+yarn build

@@ -8,7 +8,6 @@
     "/dist",
     "/babel-preset",
     "/examples",
-    "/examples/*/.gitignore",
     "!/examples/*/yarn.lock",
     "/templates/",
     "/commands/"
