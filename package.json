@@ -16,9 +16,9 @@
     "build:watch": "preconstruct watch",
     "postinstall": "preconstruct dev",
     "add-change": "changeset add",
-    "ci:copy-readme-to-packages": "cp ./README.md ./packages/bgdk/ && cp ./README.md ./packages/storybook/",
+    "ci:prepare": "scripts/prepare-for-publish",
     "ci:version": "changeset version && yarn && yarn format",
-    "ci:release": "yarn ci:copy-readme-to-packages && yarn build && changeset publish",
+    "ci:release": "yarn ci:prepare && changeset publish",
     "example": "manypkg run bgdk-basic-example"
   },
   "devDependencies": {

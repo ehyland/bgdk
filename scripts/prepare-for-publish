@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+cp ./README.md ./packages/bgdk/
+cp ./README.md ./packages/storybook/
+cp -r examples ./packages/bgdk/
+
+yarn build

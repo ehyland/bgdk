@@ -14,7 +14,8 @@ Snapshot Release
 # bump versions
 yarn changeset version --snapshot dev
 
-# build and publish
-yarn ci:copy-readme-to-packages
-yarn build
+# build
+yarn ci:prepare
+
+# publish
 yarn changeset publish --tag dev
