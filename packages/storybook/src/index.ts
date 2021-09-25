@@ -1,1 +1,1 @@
-export { fixStorybookConfig } from "./fix-storybook-config";
+export { fixStorybookConfig } from './fix-storybook-config';
