@@ -1,16 +1,16 @@
-import webpack from 'webpack';
-import WebpackDevServer from 'webpack-dev-server';
-import { createWebpackConfig } from '../config/createWebpackConfig';
-import { createWebpackDevServerConfig } from '../config/createWebpackDevServerConfig';
-import { log } from '../lib/log';
+import webpack from "webpack";
+import WebpackDevServer from "webpack-dev-server";
+import { createWebpackConfig } from "../config/createWebpackConfig";
+import { createWebpackDevServerConfig } from "../config/createWebpackDevServerConfig";
+import { log } from "../lib/log";
 
 export async function main() {
   log(`Starting app in dev mode...`);
 
-  process.env.BABEL_ENV = 'development';
-  process.env.NODE_ENV = 'development';
+  process.env.BABEL_ENV = "development";
+  process.env.NODE_ENV = "development";
 
-  const webpackConfig = createWebpackConfig({ mode: 'development' });
+  const webpackConfig = createWebpackConfig({ mode: "development" });
 
   const devServerConfig = createWebpackDevServerConfig();
 
