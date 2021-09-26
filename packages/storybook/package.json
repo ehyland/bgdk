@@ -29,8 +29,8 @@
     "mini-css-extract-plugin": "*"
   },
   "devDependencies": {
-    "@vanilla-extract/webpack-plugin": "^2.1.0",
-    "mini-css-extract-plugin": "^2.3.0"
+    "@vanilla-extract/webpack-plugin": "2.1.0",
+    "mini-css-extract-plugin": "2.3.0"
   },
   "dependencies": {
     "@storybook/addon-actions": "^6.3.8",
