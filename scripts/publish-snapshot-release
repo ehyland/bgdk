@@ -17,5 +17,5 @@ yarn changeset version --snapshot dev
 # build
 yarn ci:prepare
 
-# publish
+# publish - calling changeset directly as yarn sets environment variables that overrides settings in .npmrc files
 ./node_modules/.bin/changeset publish --tag dev

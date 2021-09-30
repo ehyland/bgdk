@@ -40,5 +40,15 @@ jobs:
 
       - name: publish
         run: scripts/publish-snapshot-release
-        env:
-          npm_config_registry: 'http://localhost:4873'
+
+      - name: Create App
+        run: npx bgdk@dev create test-app
+
+      - name: Build App
+        run: |
+          cd test-app
+          yarn build
+
+      - name: Start app in dev mode
+        run: |
+          yarn dev
