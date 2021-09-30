@@ -38,12 +38,12 @@ jobs:
           node-version: 14.x
           registry-url: 'http://localhost:4873'
 
-      - run: npm cache verify
-
       - name: publish
         run: scripts/publish-snapshot-release
         env:
           npm_config_registry: 'http://localhost:4873'
+
+      - run: npm cache clean --force
 
       - name: Create App
         run: npx bgdk@dev create test-app
