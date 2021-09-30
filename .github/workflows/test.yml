@@ -38,6 +38,11 @@ jobs:
           node-version: 14.x
           registry-url: 'http://localhost:4873'
 
+      - name: version
+        run: scripts/publish-snapshot-release
+        env:
+          npm_config_registry: 'http://localhost:4873'
+
       - name: publish
         run: yarn ci:release
         env:
