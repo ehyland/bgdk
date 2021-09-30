@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  push:
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@main
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@main
+        with:
+          node-version: 14.x
+
+      - name: Install
+        run: yarn --immutable
+
+      - name: Build
+        run: yarn --immutable
+
+      - name: Setup Verdaccio
+        uses: ./.github/actions/setup-verdaccio
