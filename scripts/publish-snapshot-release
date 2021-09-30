@@ -18,12 +18,4 @@ yarn changeset version --snapshot dev
 yarn ci:prepare
 
 # publish
-# yarn changeset publish --tag dev
-
-cd packages/bgdk
-npm publish --tag dev
-cd -
-
-cd packages/storybook
-npm publish --tag dev
-cd -
+./node_modules/.bin/changeset publish --tag dev
