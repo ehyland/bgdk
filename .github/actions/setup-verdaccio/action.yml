@@ -34,5 +34,4 @@ runs:
     - name: Add test user to Verdaccio
       run: |
         npm-auth-to-token -u test -p test -e test@test.com -r http://localhost:4873
-        cat .npmrc
       shell: bash

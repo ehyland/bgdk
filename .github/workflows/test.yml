@@ -26,3 +26,6 @@ jobs:
 
       - name: Setup Verdaccio
         uses: ./.github/actions/setup-verdaccio
+
+      - name: publish
+        run: yarn ci:release
