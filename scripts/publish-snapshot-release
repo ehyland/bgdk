@@ -18,4 +18,12 @@ yarn changeset version --snapshot dev
 yarn ci:prepare
 
 # publish
-yarn changeset publish --tag dev
+# yarn changeset publish --tag dev
+
+cd packages/bgdk
+npm run publish --tag dev
+cd -
+
+cd packages/storybook
+npm run publish --tag dev
+cd -
