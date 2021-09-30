@@ -55,4 +55,6 @@ jobs:
 
       - name: Start app in dev mode
         run: |
+          cd test-app
+          echo `pwd`
           yarn dev
