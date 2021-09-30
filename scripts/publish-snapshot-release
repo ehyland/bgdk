@@ -6,6 +6,7 @@ set -euxo pipefail
 echo "---
 'bgdk': patch
 '@bgdk/storybook': patch
+'bgdk-basic-example': patch
 ---
 
 Snapshot Release
