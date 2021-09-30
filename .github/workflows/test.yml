@@ -13,6 +13,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@main
 
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
       - name: Setup Node.js 14.x
         uses: actions/setup-node@main
         with:
@@ -26,6 +31,12 @@ jobs:
 
       - name: Setup Verdaccio
         uses: ./.github/actions/setup-verdaccio
+
+      - name: Switch registries
+        uses: actions/setup-node@main
+        with:
+          node-version: 14.x
+          registry-url: 'http://localhost:4873'
 
       - name: publish
         run: yarn ci:release
