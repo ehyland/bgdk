@@ -21,9 +21,9 @@ yarn ci:prepare
 # yarn changeset publish --tag dev
 
 cd packages/bgdk
-npm run publish --tag dev
+npm publish --tag dev
 cd -
 
 cd packages/storybook
-npm run publish --tag dev
+npm publish --tag dev
 cd -
