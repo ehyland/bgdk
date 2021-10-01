@@ -48,13 +48,8 @@ jobs:
       - name: Create App
         run: npx bgdk@dev create test-app
 
-      - name: Build App
-        run: |
-          cd test-app
-          yarn build
+      - name: Test Build Command
+        run: node tests/e2e/build-comand.test.js
 
-      - name: Start app in dev mode
-        run: |
-          cd test-app
-          echo `pwd`
-          yarn dev
+      - name: Test Dev Command
+        run: node tests/e2e/dev-comand.test.js
