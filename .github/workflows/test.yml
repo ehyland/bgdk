@@ -45,10 +45,17 @@ jobs:
 
       - run: npm cache clean --force
 
-      - run: echo `pwd` && ls -la '../'
+      - run: echo "::set-output name=SCRATH_PATH::$(mktemp)"
+        id: tmp-dir
 
       - run: yarn jest tests/e2e/commands/create.test.ts
+        env:
+          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
 
       - run: yarn jest tests/e2e/commands/build.test.ts
+        env:
+          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
 
       - run: yarn jest tests/e2e/commands/dev.test.ts
+        env:
+          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
