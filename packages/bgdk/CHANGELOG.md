@@ -1,5 +1,11 @@
 # bgdk
 
+## 0.2.3
+
+### Patch Changes
+
+- c348dbf: Update deps
+
 ## 0.2.2
 
 ### Patch Changes
