@@ -45,7 +45,7 @@ jobs:
 
       - run: npm cache clean --force
 
-      - run: echo "::set-output name=SCRATH_PATH::$(mktemp)"
+      - run: echo "::set-output name=SCRATH_PATH::$(mktemp -d)"
         id: tmp-dir
 
       - run: yarn jest tests/e2e/commands/create.test.ts
