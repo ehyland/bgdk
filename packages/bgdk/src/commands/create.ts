@@ -21,7 +21,7 @@ export async function main(options: Options) {
     await fs.move(
       path.resolve(outputPath, '.npmignore'),
       path.resolve(outputPath, '.gitignore'),
-      { overwrite: true }
+      { overwrite: true },
     );
   } catch (error) {
     log(`Failed creating gitignore, assuming this is local dev`);

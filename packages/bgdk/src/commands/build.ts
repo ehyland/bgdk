@@ -26,7 +26,7 @@ export async function main() {
       assets: true,
       performance: true,
       timings: true,
-    })
+    }),
   );
 
   log(`Successfully built app!`);

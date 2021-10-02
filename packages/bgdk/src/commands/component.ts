@@ -21,8 +21,8 @@ export async function main(options: Options) {
         componentName,
         templateDir,
         templateName,
-      })
-    )
+      }),
+    ),
   );
 }
 
@@ -45,12 +45,15 @@ async function processTemplate(options: ProcessTemplateOptions) {
   const templateComponentNameRegex = regexFromString('TemplateComponentName');
   const templatePath = resolveRelative(
     options.templateDir,
-    options.templateName
+    options.templateName,
   );
 
   const outputPath = resolveRelative(
     options.componentDir,
-    options.templateName.replace('TemplateComponentName', options.componentName)
+    options.templateName.replace(
+      'TemplateComponentName',
+      options.componentName,
+    ),
   );
 
   const outputContent = (await fs.readFile(templatePath, 'utf8'))

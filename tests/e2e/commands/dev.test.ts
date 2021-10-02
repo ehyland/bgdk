@@ -27,7 +27,7 @@ describe('bgdk dev', () => {
       child.all?.on('data', (data) => {
         if (
           stripAnsi(data.toString()).includes(
-            'webpack compiled successfully in'
+            'webpack compiled successfully in',
           )
         ) {
           resolve(undefined);
