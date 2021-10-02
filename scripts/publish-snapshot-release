@@ -6,6 +6,7 @@ set -euxo pipefail
 echo "---
 'bgdk': patch
 '@bgdk/storybook': patch
+'bgdk-basic-example': patch
 ---
 
 Snapshot Release
@@ -17,5 +18,5 @@ yarn changeset version --snapshot dev
 # build
 yarn ci:prepare
 
-# publish
-yarn changeset publish --tag dev
+# publish - calling changeset directly as yarn sets environment variables that overrides settings in .npmrc files
+./node_modules/.bin/changeset publish --tag dev

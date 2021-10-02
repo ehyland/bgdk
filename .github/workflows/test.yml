@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@main
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@main
+        with:
+          node-version: 14.x
+
+      - name: Install
+        run: yarn --immutable
+
+      - name: Build
+        run: yarn --immutable
+
+      - name: Setup Verdaccio
+        uses: ./.github/actions/setup-verdaccio
+
+      - name: Switch registries
+        uses: actions/setup-node@main
+        with:
+          node-version: 14.x
+          registry-url: 'http://localhost:4873'
+
+      - name: publish
+        run: scripts/publish-snapshot-release
+        env:
+          npm_config_registry: 'http://localhost:4873'
+
+      - run: npm cache clean --force
+
+      - run: echo "::set-output name=SCRATH_PATH::$(mktemp -d)"
+        id: tmp-dir
+
+      - run: yarn jest tests/e2e/commands/create.test.ts
+        env:
+          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
+
+      - run: yarn jest tests/e2e/commands/build.test.ts
+        env:
+          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
+
+      - run: yarn jest tests/e2e/commands/dev.test.ts
+        env:
+          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
