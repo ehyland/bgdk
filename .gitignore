@@ -2,3 +2,4 @@ dist
 node_modules
 /packages/bgdk/README.md
 /packages/storybook/README.md
+/tests/e2e/scratch

@@ -45,11 +45,10 @@ jobs:
 
       - run: npm cache clean --force
 
-      - name: Create App
-        run: npx bgdk@dev create test-app
+      - run: echo `pwd` && ls -la '../'
 
-      - name: Test Build Command
-        run: node tests/e2e/build-comand.test.js
+      - run: yarn jest tests/e2e/commands/create.test.ts
 
-      - name: Test Dev Command
-        run: node tests/e2e/dev-comand.test.js
+      - run: yarn jest tests/e2e/commands/build.test.ts
+
+      - run: yarn jest tests/e2e/commands/dev.test.ts
