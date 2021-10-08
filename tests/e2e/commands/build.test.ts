@@ -35,10 +35,19 @@ describe('bgdk build', () => {
       .toMatchInlineSnapshot(`
       Array [
         "index.html",
-        "main.css",
-        "main.js",
-        "main.js.LICENSE.txt",
-        "main.js.map",
+        "static",
+      ]
+    `);
+    expect(await fs.readdir(path.resolve(SCRATH_PATH, 'dist/static')))
+      .toMatchInlineSnapshot(`
+      Array [
+        "main.2691ff97ba2b6fa3324b.js",
+        "main.2691ff97ba2b6fa3324b.js.LICENSE.txt",
+        "main.2691ff97ba2b6fa3324b.js.map",
+        "main.52ef703aa4fbedfccf7e.css",
+        "main.b4eaebec9efbc7f3497b.js",
+        "main.b4eaebec9efbc7f3497b.js.LICENSE.txt",
+        "main.b4eaebec9efbc7f3497b.js.map",
       ]
     `);
   });
