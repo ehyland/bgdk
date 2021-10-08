@@ -37,6 +37,11 @@
     "url": "https://github.com/ehyland/bgdk/issues"
   },
   "homepage": "https://github.com/ehyland/bgdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ehyland/bgdk.git",
+    "directory": "packages/bgdk"
+  },
   "devDependencies": {
     "@types/babel__core": "^7.1.15",
     "@types/fs-extra": "^9.0.13",

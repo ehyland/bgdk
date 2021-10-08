@@ -24,6 +24,11 @@
     "url": "https://github.com/ehyland/bgdk/issues"
   },
   "homepage": "https://github.com/ehyland/bgdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ehyland/bgdk.git",
+    "directory": "packages/storybook"
+  },
   "peerDependencies": {
     "@vanilla-extract/webpack-plugin": "*",
     "mini-css-extract-plugin": "*"
