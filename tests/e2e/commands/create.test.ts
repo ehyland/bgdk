@@ -20,9 +20,10 @@ describe('bgdk create app', () => {
       stdio: 'inherit',
     });
 
-    const child = execa.command(`npx bgdk@dev create ${SCRATH_PATH}`, {
+    const child = execa.command(`npx bgdk@dev create app`, {
       all: true,
       encoding: 'utf8',
+      cwd: SCRATH_PATH,
     });
 
     return { result: await child };
