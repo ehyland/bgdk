@@ -29,6 +29,19 @@ export async function main(options: Options) {
 
   log(`Installed deps`);
 
+  await execa.command('yarn cache list', {
+    stdio: 'inherit',
+    cwd: outputPath,
+    env: {
+      ...process.env,
+      // Dev dependancies are skipped when NODE_ENV === 'production'
+      NODE_ENV: undefined,
+
+      // debug: is it pnpm?
+      NODE_PATH: undefined,
+    },
+  });
+
   await execa.command('yarn', {
     stdio: 'inherit',
     cwd: outputPath,
