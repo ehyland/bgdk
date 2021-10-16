@@ -12,12 +12,19 @@ describe('bgdk create app', () => {
   const setup = async () => {
     await clearScratchSpace();
 
+    await execa.command(`cat /home/runner/work/_temp/.npmrc`, {
+      stdio: 'inherit',
+      cwd: SCRATH_PATH,
+    });
+
     await execa.command(`npm config get registry`, {
       stdio: 'inherit',
+      cwd: SCRATH_PATH,
     });
 
     await execa.command(`npm config get registry --global`, {
       stdio: 'inherit',
+      cwd: SCRATH_PATH,
     });
 
     const child = execa.command(`npx bgdk@dev create app`, {
