@@ -4,8 +4,6 @@ description: clone, cache, node & pnpm
 runs:
   using: 'composite'
   steps:
-    - uses: actions/checkout@main
-
     - uses: actions/cache@v2
       with:
         path: ~/.pnpm-store

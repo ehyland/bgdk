@@ -9,6 +9,8 @@ jobs:
     env:
       CI: true
     steps:
+      - uses: actions/checkout@main
+
       - uses: ./.github/actions/setup
 
       - run: npm set "//registry.npmjs.org/:_authToken" ${{ secrets.NPM_TOKEN }}

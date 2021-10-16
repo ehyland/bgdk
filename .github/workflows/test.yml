@@ -10,6 +10,8 @@ jobs:
     env:
       CI: true
     steps:
+      - uses: actions/checkout@main
+
       - uses: ./.github/actions/setup
 
       - run: pnpm lint

@@ -12,6 +12,8 @@ jobs:
     env:
       CI: true
     steps:
+      - uses: actions/checkout@main
+
       - uses: ./.github/actions/setup
 
       - name: Create release PR or publish to npm
