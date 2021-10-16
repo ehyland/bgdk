@@ -11,7 +11,7 @@ jobs:
     steps:
       # - uses: actions/checkout@main
 
-      - uses: .github/workflows/setup.yml
+      - uses: ./.github/workflows/setup.yml
 
       - run: npm set "//registry.npmjs.org/:_authToken" ${{ secrets.NPM_TOKEN }}
 

@@ -12,7 +12,7 @@ jobs:
     steps:
       # - uses: actions/checkout@main
 
-      - uses: .github/workflows/setup.yml
+      - uses: ./.github/workflows/setup.yml
 
       - run: pnpm lint
 
