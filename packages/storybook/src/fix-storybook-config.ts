@@ -31,8 +31,16 @@ export function fixStorybookConfig(config: Configuration) {
 
   // add src loader for css
   rules.unshift({
-    test: /\.css$/i,
-    use: [MiniCssExtractPlugin.loader, path.resolve('css-loader')],
+    test: /\.vanilla\.css$/i,
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          url: false, // Required as image imports should be handled via JS/TS import statements
+        },
+      },
+    ],
     include: srcMatchers,
   });
 

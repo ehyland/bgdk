@@ -47,8 +47,16 @@ export function createWebpackConfig({
           },
         },
         {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, require.resolve('css-loader')],
+          test: /\.vanilla\.css$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: require.resolve('css-loader'),
+              options: {
+                url: false, // Required as image imports should be handled via JS/TS import statements
+              },
+            },
+          ],
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/,
