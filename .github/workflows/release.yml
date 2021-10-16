@@ -12,9 +12,9 @@ jobs:
     env:
       CI: true
     steps:
-      - uses: actions/checkout@main
+      # - uses: actions/checkout@main
 
-      - uses: ./.github/actions/setup
+      - uses: .github/workflows/setup.yml
 
       - name: Create release PR or publish to npm
         uses: changesets/action@master
