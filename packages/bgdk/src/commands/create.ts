@@ -36,6 +36,9 @@ export async function main(options: Options) {
       ...process.env,
       // Dev dependancies are skipped when NODE_ENV === 'production'
       NODE_ENV: undefined,
+
+      // debug: is it pnpm?
+      NODE_PATH: undefined,
     },
   });
 }
