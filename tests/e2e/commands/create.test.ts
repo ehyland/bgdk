@@ -12,16 +12,21 @@ describe('bgdk create app', () => {
   const setup = async () => {
     await clearScratchSpace();
 
+    console.log(`Running npx bgdk@dev create ${SCRATH_PATH}`);
+
     const child = execa.command(`npx bgdk@dev create ${SCRATH_PATH}`, {
       all: true,
       encoding: 'utf8',
     });
+
+    child.all?.pipe(process.stderr);
 
     return { result: await child };
   };
 
   beforeAll(async () => {
     ctx = await setup();
+    console.log(`successfullt created app`);
   });
 
   it('Logs create messge', () => {

@@ -27,13 +27,15 @@ export async function main(options: Options) {
     log(`Failed creating gitignore, assuming this is local dev`);
   }
 
-  // await execa.command('npm i', {
-  //   stdio: 'inherit',
-  //   cwd: outputPath,
-  //   env: {
-  //     ...process.env,
-  //     // Dev dependancies are skipped when NODE_ENV === 'production'
-  //     NODE_ENV: undefined,
-  //   },
-  // });
+  log(`Installed deps`);
+
+  await execa.command('npm i', {
+    stdio: 'inherit',
+    cwd: outputPath,
+    env: {
+      ...process.env,
+      // Dev dependancies are skipped when NODE_ENV === 'production'
+      NODE_ENV: undefined,
+    },
+  });
 }
