@@ -36,6 +36,14 @@ jobs:
       - run: echo "::set-output name=SCRATH_PATH::$(mktemp -d)"
         id: tmp-dir
 
+      - run: |
+          pnpm config get registry
+          pnpm config get registry --global
+          npm config get registry
+          npm config get registry --global
+          npm config get cache
+          npm config get cache --global
+
       - run: pnpm jest tests/e2e/commands/create.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
