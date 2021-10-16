@@ -19,5 +19,5 @@ pnpm changeset version --snapshot dev
 pnpm ci:prepare
 
 # publish - calling changeset directly as pnpm sets environment variables that overrides settings in .npmrc files
-pnpm publish -r --tag dev
+pnpm publish -r --tag dev --no-git-checks
 # ./node_modules/.bin/changeset publish --tag dev
