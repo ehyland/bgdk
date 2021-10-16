@@ -16,6 +16,8 @@ describe('bgdk create app', () => {
       stdio: 'inherit',
     });
 
+    console.log(process.env);
+
     console.log(`Running npx bgdk@dev create ${SCRATH_PATH}`);
 
     const child = execa.command(`npx bgdk@dev create ${SCRATH_PATH}`, {
