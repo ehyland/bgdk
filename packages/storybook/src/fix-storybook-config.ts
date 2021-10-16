@@ -1,6 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
-import type { Configuration, RuleSetRule } from 'webpack';
+import type { Configuration, RuleSetRule, Plugin } from 'webpack';
 import path from 'path';
 
 const root = path.resolve(process.cwd());
@@ -37,7 +37,10 @@ export function fixStorybookConfig(config: Configuration) {
   });
 
   // add vanilla plugin
-  config.plugins?.push(new VanillaExtractPlugin(), new MiniCssExtractPlugin());
+  config.plugins?.push(
+    new VanillaExtractPlugin() as unknown as Plugin,
+    new MiniCssExtractPlugin() as unknown as Plugin,
+  );
 
   // base url
   config.resolve!.modules = ['node_modules', src];
