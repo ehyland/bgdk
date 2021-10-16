@@ -32,7 +32,7 @@ export function fixStorybookConfig(config: Configuration) {
   // add src loader for css
   rules.unshift({
     test: /\.css$/i,
-    use: [MiniCssExtractPlugin.loader, 'css-loader'],
+    use: [MiniCssExtractPlugin.loader, path.resolve('css-loader')],
     include: srcMatchers,
   });
 
