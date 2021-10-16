@@ -9,7 +9,7 @@ jobs:
     env:
       CI: true
     steps:
-      # - uses: actions/checkout@main
+      - uses: actions/checkout@main
 
       - uses: ./.github/workflows/setup.yml
 
