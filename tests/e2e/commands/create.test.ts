@@ -11,6 +11,15 @@ describe('bgdk create app', () => {
 
   const setup = async () => {
     await clearScratchSpace();
+
+    await execa.command(`npm config get registry`, {
+      stdio: 'inherit',
+    });
+
+    await execa.command(`npm config get registry --global`, {
+      stdio: 'inherit',
+    });
+
     const child = execa.command(`npx bgdk@dev create ${SCRATH_PATH}`, {
       all: true,
       encoding: 'utf8',
