@@ -12,6 +12,10 @@ describe('bgdk create app', () => {
   const setup = async () => {
     await clearScratchSpace();
 
+    await execa.command(`npm cache clean --force`, {
+      stdio: 'inherit',
+    });
+
     console.log(`Running npx bgdk@dev create ${SCRATH_PATH}`);
 
     const child = execa.command(`npx bgdk@dev create ${SCRATH_PATH}`, {
