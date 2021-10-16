@@ -29,6 +29,7 @@ jobs:
       - run: |
           npm config set cache ~/.npm-cache-local --global
           npm cache verify
+          npm cache clean --force
 
       - name: publish
         run: scripts/publish-snapshot-release
@@ -37,6 +38,7 @@ jobs:
         id: tmp-dir
 
       - run: |
+          npm cache clean --force
           pnpm config get registry
           pnpm config get registry --global
           npm config get registry
