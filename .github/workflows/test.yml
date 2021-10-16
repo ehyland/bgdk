@@ -26,12 +26,12 @@ jobs:
           node-version: 14.x
           registry-url: 'http://localhost:4873'
 
+      - run: npm config set cache ~/.npm-cache-local --global
+
       - name: publish
         run: scripts/publish-snapshot-release
         env:
           npm_config_registry: 'http://localhost:4873'
-
-      - run: npm cache clean --force
 
       - run: echo "::set-output name=SCRATH_PATH::$(mktemp -d)"
         id: tmp-dir
