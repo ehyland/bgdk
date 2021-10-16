@@ -8,6 +8,7 @@
     "/dist",
     "/babel-preset",
     "/examples",
+    "/examples/basic/.gitignore",
     "!/examples/*/pnpm-lock.yaml",
     "/templates/",
     "/commands/"

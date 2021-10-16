@@ -31,13 +31,15 @@ test.after(async () => {
 
 export function run(
   cmd: string,
-  options: execa.Options & { log?: boolean } = {},
+  options: execa.Options & { log?: boolean; home?: boolean } = {},
 ) {
   console.log(`$ ${cmd}`);
   let isRunning = true;
 
   const childProcess = execa.command(cmd, {
+    ...(options.home ? { cwd: process.env.HOME! } : undefined),
     ...options,
+    shell: 'bash',
     all: true,
     detached: true,
   });
@@ -66,22 +68,24 @@ export async function setupVerdaccio() {
   await messageFromChild(verdaccio, 'http address');
 
   await run(`npm set registry http://localhost:4873`, {
-    cwd: process.env.HOME!,
+    home: true,
   });
 
   await run(`npm config set unsafe-perm true`, {
-    cwd: process.env.HOME!,
+    home: true,
   });
+
+  await run(`mkdir ~/.npm-cache-verdaccio`);
+  await run(`npm config set cache ~/.npm-cache-verdaccio`, {
+    home: true,
+  });
+
+  await run(`ls -la  ~/.npm-cache-verdaccio`);
 
   // setup auth
   await run(
     `npm-auth-to-token -u test -p test -e test@test.com -r http://localhost:4873`,
-    { cwd: '/' },
-  );
-
-  await run(
-    `npm-auth-to-token -u test -p test -e test@test.com -r http://localhost:4873`,
-    { cwd: REPO_DIR },
+    { home: true },
   );
 }
 

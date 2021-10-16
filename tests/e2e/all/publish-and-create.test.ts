@@ -19,7 +19,11 @@ test('publish & create', async () => {
     },
     extendEnv: false,
   });
-  await util.run('npx bgdk@dev create app', { cwd: util.APP_PARENT_PATH });
+
+  await util.run('npx bgdk@dev create app', {
+    cwd: util.APP_PARENT_PATH,
+  });
+
   const { all: buildOutput } = await util.run('pnpm build', {
     cwd: util.APP_PATH,
   });
