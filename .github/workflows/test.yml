@@ -10,30 +10,13 @@ jobs:
     env:
       CI: true
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@main
+      - uses: ./.github/actions/setup
 
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - run: pnpm lint
 
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@main
-        with:
-          node-version: 14.x
+      - run: pnpm build
 
-      - name: Install
-        run: yarn --immutable
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Build
-        run: yarn build
-
-      - name: Setup Verdaccio
-        uses: ./.github/actions/setup-verdaccio
+      - uses: ./.github/actions/setup-verdaccio
 
       - name: Switch registries
         uses: actions/setup-node@main
@@ -51,14 +34,14 @@ jobs:
       - run: echo "::set-output name=SCRATH_PATH::$(mktemp -d)"
         id: tmp-dir
 
-      - run: yarn jest tests/e2e/commands/create.test.ts
+      - run: pnpm jest tests/e2e/commands/create.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
 
-      - run: yarn jest tests/e2e/commands/build.test.ts
+      - run: pnpm jest tests/e2e/commands/build.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
 
-      - run: yarn jest tests/e2e/commands/dev.test.ts
+      - run: pnpm jest tests/e2e/commands/dev.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}

@@ -14,7 +14,7 @@ describe('bgdk build', () => {
       throw new Error('Scratch app not found');
     }
 
-    const child = execa.command(`yarn build`, {
+    const child = execa.command(`pnpm build`, {
       all: true,
       detached: true,
       encoding: 'utf8',

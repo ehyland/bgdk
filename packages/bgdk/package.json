@@ -8,7 +8,7 @@
     "/dist",
     "/babel-preset",
     "/examples",
-    "!/examples/*/yarn.lock",
+    "!/examples/*/pnpm-lock.yaml",
     "/templates/",
     "/commands/"
   ],

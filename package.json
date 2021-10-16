@@ -12,16 +12,16 @@
   "private": true,
   "scripts": {
     "dev": "preconstruct dev",
-    "test": "yarn lint",
+    "test": "pnpm lint",
     "lint": "manypkg check && prettier --check . && tsc --noEmit",
     "format": "prettier --write .",
     "build": "preconstruct build",
     "build:watch": "preconstruct watch",
-    "postinstall": "preconstruct dev",
+    "postinstall": "test -n \"$SKIP_PRECONSTRUCT_DEV\" || preconstruct dev",
     "add-change": "changeset add",
     "ci:prepare": "scripts/prepare-for-publish",
-    "ci:version": "changeset version && yarn && yarn format",
-    "ci:release": "yarn ci:prepare && changeset publish",
+    "ci:version": "changeset version && pnpm i && pnpm format",
+    "ci:release": "pnpm ci:prepare && pnpm publish -r",
     "example": "manypkg run bgdk-basic-example"
   },
   "workspaces": {
@@ -44,7 +44,7 @@
   },
   "volta": {
     "node": "14.17.6",
-    "yarn": "1.22.11"
+    "pnpm": "6.16.1"
   },
   "dependencies": {
     "@babel/core": "^7.15.8",
@@ -66,6 +66,8 @@
     "prettier": "^2.4.0",
     "strip-ansi": "^6.0.0",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.4.3"
+    "tsm": "^2.1.0",
+    "typescript": "^4.4.3",
+    "uvu": "^0.5.1"
   }
 }

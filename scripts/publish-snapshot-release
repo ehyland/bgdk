@@ -13,10 +13,11 @@ Snapshot Release
 " > .changeset/snapshot.md
 
 # bump versions
-yarn changeset version --snapshot dev
+pnpm changeset version --snapshot dev
 
 # build
-yarn ci:prepare
+pnpm ci:prepare
 
-# publish - calling changeset directly as yarn sets environment variables that overrides settings in .npmrc files
-./node_modules/.bin/changeset publish --tag dev
+# publish - calling changeset directly as pnpm sets environment variables that overrides settings in .npmrc files
+pnpm publish -r --tag dev
+# ./node_modules/.bin/changeset publish --tag dev

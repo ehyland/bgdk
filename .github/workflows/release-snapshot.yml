@@ -9,16 +9,7 @@ jobs:
     env:
       CI: true
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@main
-
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@main
-        with:
-          node-version: 14.x
-
-      - name: Install Dependencies
-        run: yarn --immutable
+      - uses: ./.github/actions/setup
 
       - run: npm set "//registry.npmjs.org/:_authToken" ${{ secrets.NPM_TOKEN }}
 

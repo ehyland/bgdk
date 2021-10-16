@@ -27,7 +27,7 @@ export async function main(options: Options) {
     log(`Failed creating gitignore, assuming this is local dev`);
   }
 
-  await execa('yarn', {
+  await execa.command('pnpm i', {
     stdio: 'inherit',
     cwd: outputPath,
     env: {

@@ -12,22 +12,13 @@ jobs:
     env:
       CI: true
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@main
-
-      - name: Setup Node.js 14.x
-        uses: actions/setup-node@main
-        with:
-          node-version: 14.x
-
-      - name: Install Dependencies
-        run: yarn --immutable
+      - uses: ./.github/actions/setup
 
       - name: Create release PR or publish to npm
         uses: changesets/action@master
         with:
-          version: yarn ci:version
-          publish: yarn ci:release
+          version: pnpm ci:version
+          publish: pnpm ci:release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
