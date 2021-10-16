@@ -15,11 +15,13 @@ describe('bgdk build', () => {
     }
 
     const child = execa.command(`pnpm build`, {
-      all: true,
       detached: true,
       encoding: 'utf8',
       cwd: SCRATH_PATH,
     });
+
+    child.stdout?.pipe(process.stdout);
+    child.stderr?.pipe(process.stderr);
 
     await child;
 
