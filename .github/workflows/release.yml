@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
 
-      - uses: .github/actions/setup-project
+      - uses: ./.github/actions/setup-project
 
       - name: Create release PR or publish to npm
         uses: changesets/action@master
