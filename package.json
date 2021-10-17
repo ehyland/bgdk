@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "dev": "preconstruct dev",
-    "test": "pnpm lint",
+    "test": "yarn lint",
     "lint": "manypkg check && prettier --check . && tsc --noEmit",
     "format": "prettier --write .",
     "build": "preconstruct build",
@@ -20,8 +20,8 @@
     "postinstall": "test -n \"$SKIP_PRECONSTRUCT_DEV\" || preconstruct dev",
     "add-change": "changeset add",
     "ci:prepare": "scripts/prepare-for-publish",
-    "ci:version": "changeset version && pnpm i && pnpm format",
-    "ci:release": "pnpm ci:prepare && pnpm publish -r",
+    "ci:version": "changeset version && yarn i && yarn format",
+    "ci:release": "yarn ci:prepare && yarn publish -r",
     "example": "manypkg run bgdk-basic-example"
   },
   "workspaces": {

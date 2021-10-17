@@ -2,8 +2,7 @@ FROM node:14-slim as base
 
 RUN apt-get update && apt-get install -y git
 
-RUN npm i -g \
-  pnpm \
+RUN yarn install -g \
   verdaccio \
   verdaccio-auth-memory \
   verdaccio-memory \

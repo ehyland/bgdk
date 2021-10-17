@@ -11,20 +11,13 @@ test('publish & create', async () => {
 
   await util.setupVerdaccio();
   await util.run('npm cache clean --force');
-  await util.run('scripts/publish-snapshot-release', {
-    env: {
-      PATH: process.env.PATH,
-      HOME: process.env.HOME,
-      npm_config_registry: 'http://localhost:4873',
-    },
-    extendEnv: false,
-  });
+  await util.run('scripts/publish-snapshot-release');
 
   await util.run('npx bgdk@dev create app', {
     cwd: util.APP_PARENT_PATH,
   });
 
-  const { all: buildOutput } = await util.run('pnpm build', {
+  const { all: buildOutput } = await util.run('npm run build', {
     cwd: util.APP_PATH,
   });
 

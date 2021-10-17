@@ -24,7 +24,7 @@ export function fixStorybookConfig(config: Configuration) {
   // add src loader for js
   rules.unshift({
     test: /\.(js|jsx|ts|tsx)$/,
-    loader: 'babel-loader',
+    loader: path.resolve('babel-loader'),
     options: { cacheDirectory: true },
     include: srcMatchers,
   });
