@@ -9,7 +9,7 @@ npm run build
 or
 
 ```
-pnpm build
+yarn build
 ```
 
 to bundle your application

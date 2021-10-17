@@ -14,9 +14,9 @@ jobs:
 
       - uses: ./.github/actions/setup-project
 
-      - run: pnpm lint
+      - run: yarn lint
 
-      - run: pnpm build
+      - run: yarn build
 
       - uses: ./.github/actions/setup-verdaccio
 
@@ -33,23 +33,18 @@ jobs:
         id: tmp-dir
 
       - run: |
-          npm cache clean --force
           yarn cache clean --force
-          pnpm config get registry
-          pnpm config get registry --global
-          npm config get registry
-          npm config get registry --global
-          npm config get cache
-          npm config get cache --global
+          yarn config get registry
+          yarn config get registry --global
 
-      - run: pnpm jest tests/e2e/commands/create.test.ts
+      - run: yarn jest tests/e2e/commands/create.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
 
-      - run: pnpm jest tests/e2e/commands/build.test.ts
+      - run: yarn jest tests/e2e/commands/build.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
 
-      - run: pnpm jest tests/e2e/commands/dev.test.ts
+      - run: yarn jest tests/e2e/commands/dev.test.ts
         env:
           SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}

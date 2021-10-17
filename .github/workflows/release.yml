@@ -19,8 +19,8 @@ jobs:
       - name: Create release PR or publish to npm
         uses: changesets/action@master
         with:
-          version: pnpm ci:version
-          publish: pnpm ci:release
+          version: yarn ci:version
+          publish: yarn ci:release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

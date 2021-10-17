@@ -2,7 +2,7 @@ FROM node:14-slim as base
 
 RUN apt-get update && apt-get install -y git
 
-RUN yarn install -g \
+RUN yarn global add \
   verdaccio \
   verdaccio-auth-memory \
   verdaccio-memory \
@@ -15,10 +15,10 @@ USER node
 WORKDIR /application/
 
 ADD --chown=node:node . /application/
-RUN --mount=type=cache,id=pnpm-store,uid=1000,gid=1000,target=/home/node/.pnpm-store \
-  pnpm install 
+RUN --mount=type=cache,id=yarn-cache,uid=1000,gid=1000,target=/application/.yarn/cache \
+  yarn install --immutable 
 
-# RUN pnpm build
+# RUN yarn build
 
 
 

@@ -14,4 +14,4 @@ fi
 cp -r examples ./packages/bgdk/
 
 # build the packages
-pnpm build
+yarn build

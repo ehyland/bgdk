@@ -42,8 +42,7 @@
     ]
   },
   "volta": {
-    "node": "14.17.6",
-    "pnpm": "6.16.1"
+    "node": "14.17.6"
   },
   "dependencies": {
     "@babel/core": "^7.15.8",

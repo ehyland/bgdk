@@ -5,16 +5,12 @@ runs:
   steps:
     - uses: actions/cache@v2
       with:
-        path: ~/.pnpm-store
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+        path: .yarn/cache
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
     - uses: actions/setup-node@main
       with:
         node-version: 14.x
 
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 6.16.1
-
-    - run: pnpm install --frozen-lockfile
+    - run: yarn install --immutable
       shell: bash

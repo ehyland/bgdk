@@ -16,7 +16,7 @@ describe('bgdk dev', () => {
       throw new Error('Scratch app not found');
     }
 
-    const child = execa.command(`pnpm dev`, {
+    const child = execa.command(`yarn dev`, {
       all: true,
       detached: true,
       encoding: 'utf8',

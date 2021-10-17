@@ -9,7 +9,7 @@
     "/babel-preset",
     "/examples",
     "/examples/basic/.gitignore",
-    "!/examples/*/pnpm-lock.yaml",
+    "!/examples/*/yarn.yaml",
     "/templates/",
     "/commands/"
   ],
