@@ -18,9 +18,6 @@ yarn changeset version --snapshot dev
 # build
 yarn ci:prepare
 
-yarn config get registry
-yarn config get registry --global
-
 # publish - calling changeset directly as yarn sets environment variables that overrides settings in .npmrc files
-yarn publish -r --tag dev --no-git-checks
-# ./node_modules/.bin/changeset publish --tag dev
+# yarn npm publish --tag dev
+./node_modules/.bin/changeset publish --tag dev
