@@ -29,7 +29,7 @@ jobs:
       - name: publish
         run: scripts/publish-snapshot-release
 
-      - run: echo "::set-output name=SCRATH_PATH::$(mktemp -d)"
+      - run: echo "::set-output name=SCRATCH_PATH::$(mktemp -d)"
         id: tmp-dir
 
       - run: |
@@ -39,12 +39,12 @@ jobs:
 
       - run: yarn jest tests/e2e/commands/create.test.ts
         env:
-          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
+          SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
       - run: yarn jest tests/e2e/commands/build.test.ts
         env:
-          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
+          SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
       - run: yarn jest tests/e2e/commands/dev.test.ts
         env:
-          SCRATH_PATH: ${{ steps.tmp-dir.outputs.SCRATH_PATH }}
+          SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}

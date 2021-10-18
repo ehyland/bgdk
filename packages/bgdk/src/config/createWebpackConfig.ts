@@ -23,11 +23,17 @@ export function createWebpackConfig({
     output: {
       path: paths.dist,
       filename: dev ? '[name].js' : 'static/[name].[contenthash].js',
+      chunkFilename: dev
+        ? '[name].chunk.js'
+        : 'static/[name].chunk.[contenthash].js',
     },
     plugins: compact([
       new VanillaExtractPlugin(),
       new MiniCssExtractPlugin({
-        filename: dev ? '[name].js' : 'static/[name].[contenthash].css',
+        filename: dev ? '[name].css' : 'static/[name].[contenthash].css',
+        chunkFilename: dev
+          ? '[name].chunk.css'
+          : 'static/[name].chunk.[contenthash].css',
       }),
       new HtmlWebpackPlugin({ template: 'src/index.html' }),
       dev && new ReactRefreshWebpackPlugin(),

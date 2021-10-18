@@ -2,7 +2,7 @@ import execa from 'execa';
 import path from 'path';
 import fs from 'fs-extra';
 import ms from 'ms';
-import { ResolveType, scratchAppExists, SCRATH_PATH } from '../test-utils';
+import { ResolveType, scratchAppExists, SCRATCH_PATH } from '../test-utils';
 
 jest.setTimeout(ms('5 minutes'));
 
@@ -14,10 +14,10 @@ describe('bgdk build', () => {
       throw new Error('Scratch app not found');
     }
 
-    const child = execa.command(`npm run build`, {
+    const child = execa.command(`yarn build`, {
       detached: true,
       encoding: 'utf8',
-      cwd: SCRATH_PATH,
+      cwd: SCRATCH_PATH,
     });
 
     child.stdout?.pipe(process.stdout);
@@ -33,20 +33,21 @@ describe('bgdk build', () => {
   });
 
   it('creates build artifacts', async () => {
-    expect(await fs.readdir(path.resolve(SCRATH_PATH, 'dist')))
+    expect(await fs.readdir(path.resolve(SCRATCH_PATH, 'dist')))
       .toMatchInlineSnapshot(`
       Array [
         "index.html",
         "static",
       ]
     `);
-    expect(await fs.readdir(path.resolve(SCRATH_PATH, 'dist/static')))
+    expect(await fs.readdir(path.resolve(SCRATCH_PATH, 'dist/static')))
       .toMatchInlineSnapshot(`
       Array [
         "main.2691ff97ba2b6fa3324b.js",
         "main.2691ff97ba2b6fa3324b.js.LICENSE.txt",
         "main.2691ff97ba2b6fa3324b.js.map",
-        "main.52ef703aa4fbedfccf7e.css",
+        "main.d698e7d311a718042f53.css",
+        "main.d698e7d311a718042f53.css.map",
       ]
     `);
   });

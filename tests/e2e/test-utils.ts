@@ -5,17 +5,17 @@ export type ResolveType<T> = T extends (...args: any[]) => Promise<infer R>
   ? R
   : never;
 
-export const SCRATH_PATH = process.env.SCRATH_PATH!;
+export const SCRATCH_PATH = process.env.SCRATCH_PATH!;
 
-if (!SCRATH_PATH) {
-  throw new Error('Missing environment variable SCRATH_PATH');
+if (!SCRATCH_PATH) {
+  throw new Error('Missing environment variable SCRATCH_PATH');
 }
 
 export async function clearScratchSpace() {
-  await fs.emptyDir(SCRATH_PATH);
+  await fs.emptyDir(SCRATCH_PATH);
 }
 
 export async function scratchAppExists() {
-  const stat = await fs.stat(path.resolve(SCRATH_PATH, 'package.json'));
+  const stat = await fs.stat(path.resolve(SCRATCH_PATH, 'package.json'));
   return stat.isFile();
 }
