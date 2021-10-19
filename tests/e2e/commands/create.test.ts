@@ -12,12 +12,6 @@ describe('bgdk create app', () => {
   const setup = async () => {
     await clearScratchSpace();
 
-    await execa.command(`npm cache clean --force`, {
-      stdio: 'inherit',
-    });
-
-    console.log(process.env);
-
     console.log(`Running npx bgdk@dev create ${SCRATCH_PATH}`);
 
     const child = execa.command(`npx bgdk@dev create ${SCRATCH_PATH}`, {
@@ -32,10 +26,10 @@ describe('bgdk create app', () => {
 
   beforeAll(async () => {
     ctx = await setup();
-    console.log(`successfullt created app`);
+    console.log(`successfully created app`);
   });
 
-  it('Logs create messge', () => {
+  it('Logs create message', () => {
     expect(ctx.result.all).toContain('🥦  Creating app in ');
   });
 

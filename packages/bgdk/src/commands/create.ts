@@ -29,7 +29,7 @@ export async function main(options: Options) {
 
   log(`Installing deps`);
 
-  await execa.command('npm install', {
+  await execa.command('yarn install', {
     stdio: 'inherit',
     cwd: outputPath,
     extendEnv: false,
