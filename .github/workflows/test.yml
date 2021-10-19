@@ -32,10 +32,8 @@ jobs:
       - run: echo "::set-output name=SCRATCH_PATH::$(mktemp -d)"
         id: tmp-dir
 
-      - run: |
-          yarn cache clean --force
-          yarn config get registry
-          yarn config get registry --global
+      # - run: |
+      #     yarn cache clean --mirror
 
       - run: yarn jest tests/e2e/commands/create.test.ts
         env:
