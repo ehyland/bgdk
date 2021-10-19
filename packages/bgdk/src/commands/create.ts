@@ -29,9 +29,18 @@ export async function main(options: Options) {
 
   log(`Installing deps`);
 
+  await execa.command('yarn --version', {
+    stdio: 'inherit',
+    cwd: outputPath,
+    extendEnv: false,
+  });
+
   await execa.command('yarn install', {
     stdio: 'inherit',
     cwd: outputPath,
     extendEnv: false,
+    env: {
+      YARN_ENABLE_IMMUTABLE_INSTALLS: 'false',
+    },
   });
 }
