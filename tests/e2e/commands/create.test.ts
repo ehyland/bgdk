@@ -43,6 +43,7 @@ describe('bgdk create app', () => {
   it('Creates the app in the correct dir', async () => {
     const packagePath = path.resolve(SCRATCH_PATH, 'package.json');
     const packageStat = await fs.stat(packagePath);
+    console.log(await fs.readFile(packagePath, 'utf8'));
     expect(packageStat.isFile()).toBe(true);
   });
 });
