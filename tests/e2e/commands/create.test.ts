@@ -17,6 +17,13 @@ describe('bgdk create app', () => {
     const child = execa.command(`npx bgdk@dev create ${SCRATCH_PATH}`, {
       all: true,
       encoding: 'utf8',
+      extendEnv: false,
+      env: {
+        PATH: process.env.PATH,
+        NPM_CONFIG_USERCONFIG: process.env.NPM_CONFIG_USERCONFIG,
+        NODE_AUTH_TOKEN: process.env.NODE_AUTH_TOKEN,
+        SCRATCH_PATH: process.env.SCRATCH_PATH,
+      },
     });
 
     child.all?.pipe(process.stderr);
