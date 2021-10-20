@@ -14,7 +14,7 @@ describe('bgdk build', () => {
       throw new Error('Scratch app not found');
     }
 
-    await execa.command(`yarn bgdk version`, {
+    await execa.command(`cat node_modules/bgdk/package.json`, {
       detached: true,
       encoding: 'utf8',
       cwd: SCRATCH_PATH,
