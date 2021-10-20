@@ -35,14 +35,17 @@ jobs:
       # - run: |
       #     yarn cache clean --mirror
 
-      - run: `yarn bin jest` tests/e2e/commands/create.test.ts
+      - run: |
+          `yarn bin jest` tests/e2e/commands/create.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
-      - run: `yarn bin jest` tests/e2e/commands/build.test.ts
+      - run: |
+          `yarn bin jest` tests/e2e/commands/build.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
-      - run: `yarn bin jest` tests/e2e/commands/dev.test.ts
+      - run: |
+          `yarn bin jest` tests/e2e/commands/dev.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
