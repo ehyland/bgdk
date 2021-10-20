@@ -14,6 +14,13 @@ describe('bgdk build', () => {
       throw new Error('Scratch app not found');
     }
 
+    await execa.command(`yarn bgdk version`, {
+      detached: true,
+      encoding: 'utf8',
+      cwd: SCRATCH_PATH,
+      stdio: 'inherit',
+    });
+
     const child = execa.command(`yarn build`, {
       detached: true,
       encoding: 'utf8',
