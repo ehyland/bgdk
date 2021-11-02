@@ -44,6 +44,12 @@ describe('bgdk create app', () => {
     const packagePath = path.resolve(SCRATCH_PATH, 'package.json');
     const packageStat = await fs.stat(packagePath);
     console.log(await fs.readFile(packagePath, 'utf8'));
+    await execa.command(`cat node_modules/bgdk/package.json`, {
+      detached: true,
+      encoding: 'utf8',
+      cwd: SCRATCH_PATH,
+      stdio: 'inherit',
+    });
     expect(packageStat.isFile()).toBe(true);
   });
 });
