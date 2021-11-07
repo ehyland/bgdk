@@ -38,4 +38,9 @@ export async function main(options: Options) {
     stdio: 'inherit',
     cwd: outputPath,
   });
+
+  await execa.command('cat yarn.lock', {
+    stdio: 'inherit',
+    cwd: outputPath,
+  });
 }
