@@ -29,17 +29,7 @@ export async function main(options: Options) {
 
   log(`Installing deps`);
 
-  await execa.command('yarn --version', {
-    stdio: 'inherit',
-    cwd: outputPath,
-  });
-
   await execa.command('yarn install', {
-    stdio: 'inherit',
-    cwd: outputPath,
-  });
-
-  await execa.command('cat yarn.lock', {
     stdio: 'inherit',
     cwd: outputPath,
   });

@@ -14,13 +14,6 @@ describe('bgdk build', () => {
       throw new Error('Scratch app not found');
     }
 
-    await execa.command(`cat node_modules/bgdk/package.json`, {
-      detached: true,
-      encoding: 'utf8',
-      cwd: SCRATCH_PATH,
-      stdio: 'inherit',
-    });
-
     const child = execa.command(`yarn build`, {
       detached: true,
       encoding: 'utf8',
@@ -40,22 +33,23 @@ describe('bgdk build', () => {
   });
 
   it('creates build artifacts', async () => {
-    expect(await fs.readdir(path.resolve(SCRATCH_PATH, 'dist')))
-      .toMatchInlineSnapshot(`
-      Array [
-        "index.html",
-        "static",
-      ]
-    `);
-    expect(await fs.readdir(path.resolve(SCRATCH_PATH, 'dist/static')))
-      .toMatchInlineSnapshot(`
-      Array [
-        "main.2691ff97ba2b6fa3324b.js",
-        "main.2691ff97ba2b6fa3324b.js.LICENSE.txt",
-        "main.2691ff97ba2b6fa3324b.js.map",
-        "main.d698e7d311a718042f53.css",
-        "main.d698e7d311a718042f53.css.map",
-      ]
-    `);
+    const topLevelFiles = await fs.readdir(path.resolve(SCRATCH_PATH, 'dist'));
+
+    const staticFiles = await fs.readdir(
+      path.resolve(SCRATCH_PATH, 'dist/static'),
+    );
+
+    expect(topLevelFiles.sort()).toEqual([
+      expect.stringMatching(/^index\.html$/),
+      expect.stringMatching(/^static$/),
+    ]);
+
+    expect(staticFiles.sort()).toEqual([
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.js$/),
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.js\.LICENSE.txt$/),
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.js\.map$/),
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.css$/),
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.css\.map$/),
+    ]);
   });
 });
