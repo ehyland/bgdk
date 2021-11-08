@@ -19,3 +19,9 @@ export async function scratchAppExists() {
   const stat = await fs.stat(path.resolve(SCRATCH_PATH, 'package.json'));
   return stat.isFile();
 }
+
+export function compareBuildFileByType(a: string, b: string) {
+  return a
+    .replace(/^main\.[a-z0-9]{20}\./, '')
+    .localeCompare(b.replace(/^main\.[a-z0-9]{20}\./, ''));
+}

@@ -2,7 +2,12 @@ import execa from 'execa';
 import path from 'path';
 import fs from 'fs-extra';
 import ms from 'ms';
-import { ResolveType, scratchAppExists, SCRATCH_PATH } from '../test-utils';
+import {
+  compareBuildFileByType,
+  ResolveType,
+  scratchAppExists,
+  SCRATCH_PATH,
+} from '../test-utils';
 
 jest.setTimeout(ms('5 minutes'));
 
@@ -44,12 +49,12 @@ describe('bgdk build', () => {
       expect.stringMatching(/^static$/),
     ]);
 
-    expect(staticFiles.sort()).toEqual([
+    expect(staticFiles.sort(compareBuildFileByType)).toEqual([
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.css$/),
+      expect.stringMatching(/^main\.[a-z0-9]{20}\.css\.map$/),
       expect.stringMatching(/^main\.[a-z0-9]{20}\.js$/),
       expect.stringMatching(/^main\.[a-z0-9]{20}\.js\.LICENSE.txt$/),
       expect.stringMatching(/^main\.[a-z0-9]{20}\.js\.map$/),
-      expect.stringMatching(/^main\.[a-z0-9]{20}\.css$/),
-      expect.stringMatching(/^main\.[a-z0-9]{20}\.css\.map$/),
     ]);
   });
 });
