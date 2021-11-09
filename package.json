@@ -20,7 +20,7 @@
     "postinstall": "preconstruct dev",
     "add-change": "changeset add",
     "ci:prepare": "scripts/prepare-for-publish",
-    "ci:version": "changeset version && yarn format",
+    "ci:version": "changeset version && YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn && yarn format",
     "ci:release": "yarn ci:prepare && changeset publish",
     "example": "manypkg run bgdk-basic-example"
   },
