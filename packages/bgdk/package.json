@@ -23,9 +23,7 @@
   "entrypoints": [
     "/bin/index.ts"
   ],
-  "bin": {
-    "bgdk": "./bin.js"
-  },
+  "bin": "./bin.js",
   "publishConfig": {
     "access": "public"
   },

@@ -17,11 +17,11 @@
     "format": "prettier --write .",
     "build": "preconstruct build",
     "build:watch": "preconstruct watch",
-    "postinstall": "test -n \"$SKIP_PRECONSTRUCT_DEV\" || preconstruct dev",
+    "postinstall": "preconstruct dev",
     "add-change": "changeset add",
     "ci:prepare": "scripts/prepare-for-publish",
     "ci:version": "changeset version && yarn i && yarn format",
-    "ci:release": "yarn ci:prepare && yarn publish -r",
+    "ci:release": "yarn ci:prepare && changeset publish",
     "example": "manypkg run bgdk-basic-example"
   },
   "workspaces": {
@@ -64,8 +64,6 @@
     "prettier": "^2.4.0",
     "strip-ansi": "^6.0.0",
     "ts-jest": "^27.0.5",
-    "tsm": "^2.1.0",
-    "typescript": "^4.4.3",
-    "uvu": "^0.5.1"
+    "typescript": "^4.4.3"
   }
 }

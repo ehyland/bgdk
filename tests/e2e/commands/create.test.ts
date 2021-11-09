@@ -12,28 +12,6 @@ describe('bgdk create app', () => {
   const setup = async () => {
     await clearScratchSpace();
 
-    await execa.command(`npm config get registry`, {
-      stdio: 'inherit',
-      extendEnv: false,
-      env: {
-        PATH: process.env.PATH,
-        NPM_CONFIG_USERCONFIG: process.env.NPM_CONFIG_USERCONFIG,
-        NODE_AUTH_TOKEN: process.env.NODE_AUTH_TOKEN,
-        SCRATCH_PATH: process.env.SCRATCH_PATH,
-      },
-    });
-
-    await execa.command(`npm config --global get registry`, {
-      stdio: 'inherit',
-      extendEnv: false,
-      env: {
-        PATH: process.env.PATH,
-        NPM_CONFIG_USERCONFIG: process.env.NPM_CONFIG_USERCONFIG,
-        NODE_AUTH_TOKEN: process.env.NODE_AUTH_TOKEN,
-        SCRATCH_PATH: process.env.SCRATCH_PATH,
-      },
-    });
-
     console.log(`Running npx bgdk@dev create ${SCRATCH_PATH}`);
 
     const child = execa.command(`npx bgdk@dev create ${SCRATCH_PATH}`, {
@@ -65,13 +43,6 @@ describe('bgdk create app', () => {
   it('Creates the app in the correct dir', async () => {
     const packagePath = path.resolve(SCRATCH_PATH, 'package.json');
     const packageStat = await fs.stat(packagePath);
-    console.log(await fs.readFile(packagePath, 'utf8'));
-    await execa.command(`cat node_modules/bgdk/package.json`, {
-      detached: true,
-      encoding: 'utf8',
-      cwd: SCRATCH_PATH,
-      stdio: 'inherit',
-    });
     expect(packageStat.isFile()).toBe(true);
   });
 });
