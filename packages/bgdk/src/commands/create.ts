@@ -27,12 +27,13 @@ export async function main(options: Options) {
     log(`Failed creating gitignore, assuming this is local dev`);
   }
 
-  await execa('yarn', {
+  log(`Installing deps`);
+
+  await execa.command('yarn install', {
     stdio: 'inherit',
     cwd: outputPath,
     env: {
-      ...process.env,
-      // Dev dependancies are skipped when NODE_ENV === 'production'
+      // Dev dependencies are skipped when NODE_ENV === 'production'
       NODE_ENV: undefined,
     },
   });

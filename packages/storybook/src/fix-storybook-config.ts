@@ -1,6 +1,10 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
-import type { Configuration, RuleSetRule } from 'webpack';
+import type {
+  Configuration,
+  RuleSetRule,
+  WebpackPluginInstance,
+} from 'webpack';
 import path from 'path';
 
 const root = path.resolve(process.cwd());
@@ -24,20 +28,31 @@ export function fixStorybookConfig(config: Configuration) {
   // add src loader for js
   rules.unshift({
     test: /\.(js|jsx|ts|tsx)$/,
-    loader: 'babel-loader',
+    loader: path.resolve('babel-loader'),
     options: { cacheDirectory: true },
     include: srcMatchers,
   });
 
   // add src loader for css
   rules.unshift({
-    test: /\.css$/i,
-    use: [MiniCssExtractPlugin.loader, 'css-loader'],
+    test: /\.vanilla\.css$/i,
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          url: false, // Required as image imports should be handled via JS/TS import statements
+        },
+      },
+    ],
     include: srcMatchers,
   });
 
   // add vanilla plugin
-  config.plugins?.push(new VanillaExtractPlugin(), new MiniCssExtractPlugin());
+  config.plugins?.push(
+    new VanillaExtractPlugin() as unknown as WebpackPluginInstance,
+    new MiniCssExtractPlugin() as unknown as WebpackPluginInstance,
+  );
 
   // base url
   config.resolve!.modules = ['node_modules', src];

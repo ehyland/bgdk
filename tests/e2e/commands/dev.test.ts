@@ -4,7 +4,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import ms from 'ms';
 import stripAnsi from 'strip-ansi';
-import { ResolveType, scratchAppExists, SCRATH_PATH } from '../test-utils';
+import { ResolveType, scratchAppExists, SCRATCH_PATH } from '../test-utils';
 
 jest.setTimeout(ms('5 minutes'));
 
@@ -20,8 +20,10 @@ describe('bgdk dev', () => {
       all: true,
       detached: true,
       encoding: 'utf8',
-      cwd: SCRATH_PATH,
+      cwd: SCRATCH_PATH,
     });
+
+    child.all?.pipe(process.stderr);
 
     await new Promise((resolve) => {
       child.all?.on('data', (data) => {
