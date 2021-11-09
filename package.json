@@ -42,7 +42,7 @@
     ]
   },
   "volta": {
-    "node": "14.17.6"
+    "node": "16.13.0"
   },
   "dependencies": {
     "@babel/core": "^7.15.8",
