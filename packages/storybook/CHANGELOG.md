@@ -1,5 +1,11 @@
 # @bgdk/storybook
 
+## 0.2.4
+
+### Patch Changes
+
+- 47ccec5: Hash build filenames
+
 ## 0.2.3
 
 ### Patch Changes

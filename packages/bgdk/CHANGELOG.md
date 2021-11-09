@@ -1,5 +1,11 @@
 # bgdk
 
+## 0.3.0
+
+### Minor Changes
+
+- 47ccec5: Hash build filenames
+
 ## 0.2.3
 
 ### Patch Changes
