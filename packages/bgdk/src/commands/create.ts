@@ -32,5 +32,9 @@ export async function main(options: Options) {
   await execa.command('yarn install', {
     stdio: 'inherit',
     cwd: outputPath,
+    env: {
+      // Dev dependencies are skipped when NODE_ENV === 'production'
+      NODE_ENV: undefined,
+    },
   });
 }
