@@ -3,11 +3,3 @@ node_modules
 /packages/bgdk/README.md
 /packages/storybook/README.md
 /tests/e2e/scratch
-
-# yarn
-/.yarn/*
-!/.yarn/patches
-!/.yarn/plugins
-!/.yarn/releases
-!/.yarn/sdks
-!/.yarn/versions

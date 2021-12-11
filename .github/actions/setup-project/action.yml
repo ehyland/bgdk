@@ -3,14 +3,14 @@ name: Setup Project
 runs:
   using: 'composite'
   steps:
-    - uses: actions/cache@v2
+    - uses: pnpm/action-setup@v2.0.1
       with:
-        path: .yarn/cache
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+        version: 6.23.6
 
     - uses: actions/setup-node@main
       with:
         node-version: 14.x
+        cache: 'pnpm'
 
-    - run: yarn install --immutable
+    - run: pnpm i
       shell: bash

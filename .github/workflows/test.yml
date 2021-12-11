@@ -14,9 +14,9 @@ jobs:
 
       - uses: ./.github/actions/setup-project
 
-      - run: yarn lint
+      - run: pnpm lint
 
-      - run: yarn build
+      - run: pnpm build
 
       - uses: ./.github/actions/setup-verdaccio
 
@@ -33,16 +33,16 @@ jobs:
         id: tmp-dir
 
       - run: |
-          `yarn bin jest` tests/e2e/commands/create.test.ts
+          `pnpm bin jest` tests/e2e/commands/create.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
       - run: |
-          `yarn bin jest` tests/e2e/commands/build.test.ts
+          `pnpm bin jest` tests/e2e/commands/build.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
       - run: |
-          `yarn bin jest` tests/e2e/commands/dev.test.ts
+          `pnpm bin jest` tests/e2e/commands/dev.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
