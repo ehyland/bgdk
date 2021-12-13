@@ -20,7 +20,7 @@
     "build:watch": "preconstruct watch",
     "add-change": "changeset add",
     "ci:prepare": "scripts/prepare-for-publish",
-    "ci:version": "changeset version && pnpm --lockfile-only && pnpm format",
+    "ci:version": "changeset version && pnpm install --lockfile-only && pnpm format",
     "ci:release": "pnpm ci:prepare && changeset publish",
     "example": "pnpm --filter ./examples/basic"
   },
