@@ -1,6 +1,6 @@
 {
   "name": "bgdk",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Create React App for vanilla extract apps",
   "files": [
     "bin.js",
