@@ -13,12 +13,12 @@ Snapshot Release
 " > .changeset/snapshot.md
 
 # bump versions
-yarn changeset version --snapshot dev
+pnpm changeset version --snapshot dev
 
 # build
-yarn ci:prepare
+pnpm ci:prepare
 
 # changesets implements custom logic that revents registry from being sourced from .npmrc
 export npm_config_registry=`npm config get registry`
 
-yarn changeset publish --tag dev
+pnpm changeset publish --tag dev
