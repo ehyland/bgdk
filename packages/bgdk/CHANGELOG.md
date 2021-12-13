@@ -1,5 +1,11 @@
 # bgdk
 
+## 0.3.1
+
+### Patch Changes
+
+- 97e3876: Update dependencies
+
 ## 0.3.0
 
 ### Minor Changes
