@@ -48,13 +48,13 @@ importers:
 
   examples/basic:
     specifiers:
-      '@bgdk/storybook': ^0.2.4
+      '@bgdk/storybook': ^0.2.5
       '@storybook/react': ^6.4.9
       '@types/react': ^17.0.37
       '@types/react-dom': ^17.0.11
       '@vanilla-extract/css': ^1.6.8
       '@vanilla-extract/sprinkles': ^1.3.3
-      bgdk: ^0.3.0
+      bgdk: ^0.3.1
       dessert-box: ^0.4.1
       jest: ^27.4.4
       polished: ^4.1.3

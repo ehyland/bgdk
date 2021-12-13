@@ -1,6 +1,6 @@
 {
   "name": "bgdk-basic-example",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Eamon Hyland",
   "license": "MIT",
@@ -15,9 +15,9 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@bgdk/storybook": "^0.2.4",
+    "@bgdk/storybook": "^0.2.5",
     "@storybook/react": "^6.4.9",
-    "bgdk": "^0.3.0",
+    "bgdk": "^0.3.1",
     "jest": "^27.4.4",
     "ts-jest": "^27.1.1",
     "typescript": "^4.5.3"

@@ -1,5 +1,11 @@
 # @bgdk/storybook
 
+## 0.2.5
+
+### Patch Changes
+
+- 97e3876: Update dependencies
+
 ## 0.2.4
 
 ### Patch Changes
