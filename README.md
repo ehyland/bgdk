@@ -48,7 +48,7 @@ bgdk component src/component/ComponentName
 - [ ] Add component generator
 - [x] Add docs to readme
 - [x] Open source
-- [ ] Setup releases in CI with [changesets](https://github.com/atlassian/changesets)
+- [x] Setup releases in CI with [changesets](https://github.com/atlassian/changesets)
 - [x] Break storybook helpers into it's own package
 - [x] Config preset for babel
 - [ ] Config preset for jest
