@@ -1,0 +1,45 @@
+{
+  "name": "create-bgdk",
+  "version": "0.0.0",
+  "description": "Bootstrap apps with BGDK",
+  "main": "dist/create-bgdk.cjs.js",
+  "files": [
+    "bin.js",
+    "/cli",
+    "/dist",
+    "/examples",
+    "/examples/basic/.gitignore",
+    "!/examples/*/yarn.yaml",
+    "/templates/"
+  ],
+  "preconstruct": {
+    "entrypoints": [
+      "cli/index.ts"
+    ]
+  },
+  "bin": "./bin.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "vanilla-extract",
+    "bgdk"
+  ],
+  "author": "Eamon Hyland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ehyland/bgdk/issues"
+  },
+  "homepage": "https://github.com/ehyland/bgdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ehyland/bgdk.git",
+    "directory": "packages/create-bgdk"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs-extra": "^10.0.0",
+    "sade": "^1.7.4",
+    "v8-compile-cache": "^2.3.0"
+  }
+}

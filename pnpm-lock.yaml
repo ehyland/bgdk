@@ -164,6 +164,18 @@ importers:
       '@types/serve-handler': 6.1.1
       '@types/webpack-dev-server': 4.5.0_webpack-cli@4.9.1
 
+  packages/create-bgdk:
+    specifiers:
+      chalk: ^4.1.2
+      fs-extra: ^10.0.0
+      sade: ^1.7.4
+      v8-compile-cache: ^2.3.0
+    dependencies:
+      chalk: 4.1.2
+      fs-extra: 10.0.0
+      sade: 1.7.4
+      v8-compile-cache: 2.3.0
+
   packages/storybook:
     specifiers:
       '@storybook/addon-actions': ^6.4.9
