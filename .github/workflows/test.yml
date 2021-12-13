@@ -33,16 +33,16 @@ jobs:
         id: tmp-dir
 
       - run: |
-          `pnpm bin jest` tests/e2e/commands/create.test.ts
+          `pnpm bin`/jest tests/e2e/commands/create.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
       - run: |
-          `pnpm bin jest` tests/e2e/commands/build.test.ts
+          `pnpm bin`/jest tests/e2e/commands/build.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
 
       - run: |
-          `pnpm bin jest` tests/e2e/commands/dev.test.ts
+          `pnpm bin`/jest tests/e2e/commands/dev.test.ts
         env:
           SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
