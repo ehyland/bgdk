@@ -3,11 +3,6 @@
   "version": "0.2.5",
   "description": "Storybook for bgdk apps",
   "main": "dist/bgdk-storybook.cjs.js",
-  "bin": {
-    "build-storybook": "./node_modules/.bin/build-storybook",
-    "start-storybook": "./node_modules/.bin/start-storybook",
-    "storybook-server": "./node_modules/.bin/storybook-server"
-  },
   "files": [
     "/dist"
   ],
@@ -35,20 +30,23 @@
     "directory": "packages/storybook"
   },
   "peerDependencies": {
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
     "@storybook/react": "^6.4.9",
     "@vanilla-extract/webpack-plugin": "*",
     "mini-css-extract-plugin": "*"
   },
   "devDependencies": {
-    "@storybook/react": "^6.4.9",
-    "@vanilla-extract/webpack-plugin": "^2.1.4",
-    "mini-css-extract-plugin": "^2.4.5"
-  },
-  "dependencies": {
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/builder-webpack5": "^6.4.9",
-    "@storybook/manager-webpack5": "^6.4.9"
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "@vanilla-extract/webpack-plugin": "^2.1.4",
+    "mini-css-extract-plugin": "^2.4.5"
   }
 }
