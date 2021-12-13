@@ -1,5 +1,11 @@
 # bgdk
 
+## 0.3.2
+
+### Patch Changes
+
+- 86b3eca: fix: install storybook as a peer dep
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "bgdk-basic-example",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "author": "Eamon Hyland",
   "license": "MIT",
@@ -15,14 +15,14 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@bgdk/storybook": "^0.2.5",
+    "@bgdk/storybook": "^0.2.6",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/builder-webpack5": "^6.4.9",
     "@storybook/manager-webpack5": "^6.4.9",
     "@storybook/react": "^6.4.9",
-    "bgdk": "^0.3.1",
+    "bgdk": "^0.3.2",
     "jest": "^27.4.4",
     "ts-jest": "^27.1.1",
     "typescript": "^4.5.3"

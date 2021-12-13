@@ -1,6 +1,6 @@
 {
   "name": "@bgdk/storybook",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Storybook for bgdk apps",
   "main": "dist/bgdk-storybook.cjs.js",
   "files": [

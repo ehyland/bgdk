@@ -48,7 +48,7 @@ importers:
 
   examples/basic:
     specifiers:
-      '@bgdk/storybook': ^0.2.5
+      '@bgdk/storybook': ^0.2.6
       '@storybook/addon-actions': ^6.4.9
       '@storybook/addon-essentials': ^6.4.9
       '@storybook/addon-links': ^6.4.9
@@ -59,7 +59,7 @@ importers:
       '@types/react-dom': ^17.0.11
       '@vanilla-extract/css': ^1.6.8
       '@vanilla-extract/sprinkles': ^1.3.3
-      bgdk: ^0.3.1
+      bgdk: ^0.3.2
       dessert-box: ^0.4.1
       jest: ^27.4.4
       polished: ^4.1.3
@@ -6906,7 +6906,7 @@ packages:
       loader-utils: 1.4.0
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 5.65.0
+      webpack: 5.65.0_webpack-cli@4.9.1
 
   /babel-plugin-add-react-displayname/0.0.5:
     resolution: {integrity: sha1-M51M3be2X9YtHfnbn+BN4TQSK9U=}
@@ -10009,7 +10009,7 @@ packages:
       lodash: 4.17.21
       pretty-error: 4.0.0
       tapable: 2.2.1
-      webpack: 5.65.0
+      webpack: 5.65.0_webpack-cli@4.9.1
     transitivePeerDependencies:
       - acorn
 
@@ -14738,7 +14738,7 @@ packages:
       serialize-javascript: 6.0.0
       source-map: 0.6.1
       terser: 5.10.0_acorn@8.6.0
-      webpack: 5.65.0
+      webpack: 5.65.0_webpack-cli@4.9.1
     transitivePeerDependencies:
       - acorn
 
