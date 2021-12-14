@@ -9,7 +9,7 @@ interface Options {
 export async function main(options: Options) {
   let outputPath = path.resolve(options.appPath);
   let outputPathRelative = path.relative(process.cwd(), outputPath);
-  let templatePath = path.resolve(__dirname, '../../../examples/basic');
+  let templatePath = path.resolve(__dirname, '../../examples/basic');
 
   log(`Creating app in ${outputPathRelative}`);
 
