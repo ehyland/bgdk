@@ -35,9 +35,6 @@
       "INCORRECT_REPOSITORY_FIELD"
     ]
   },
-  "volta": {
-    "node": "16.13.1"
-  },
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
