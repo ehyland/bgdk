@@ -29,20 +29,17 @@ jobs:
       - name: publish
         run: scripts/publish-snapshot-release
 
-      - run: echo "::set-output name=SCRATCH_PATH::$(mktemp -d)"
-        id: tmp-dir
-
       - run: |
           `pnpm bin`/jest tests/e2e/commands/create.test.ts
         env:
-          SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
+          SCRATCH_PATH: tests/e2e/workspace/test-1
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/build.test.ts
         env:
-          SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
+          SCRATCH_PATH: tests/e2e/workspace/test-1
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/dev.test.ts
         env:
-          SCRATCH_PATH: ${{ steps.tmp-dir.outputs.SCRATCH_PATH }}
+          SCRATCH_PATH: tests/e2e/workspace/test-1

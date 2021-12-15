@@ -15,7 +15,11 @@ Or, create react app for vanilla-extract apps.
 ## Create a new app
 
 ```bash
-npx bgdk create ./my-new-app
+# with npm
+npm init bgdk ./my-new-app
+
+# with yarn
+yarn create bgdk ./my-new-app
 ```
 
 ## Start the app in dev mode
