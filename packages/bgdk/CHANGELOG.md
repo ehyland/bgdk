@@ -1,5 +1,11 @@
 # bgdk
 
+## 0.3.3
+
+### Patch Changes
+
+- a343c9c: Move create command to create-bgdk
+
 ## 0.3.2
 
 ### Patch Changes
