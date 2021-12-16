@@ -23,6 +23,7 @@ export function createWebpackConfig({
     output: {
       path: paths.dist,
       filename: dev ? '[name].js' : 'static/[name].[contenthash].js',
+      publicPath: '/',
       chunkFilename: dev
         ? '[name].chunk.js'
         : 'static/[name].chunk.[contenthash].js',
