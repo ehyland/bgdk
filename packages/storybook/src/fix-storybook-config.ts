@@ -35,7 +35,7 @@ export function fixStorybookConfig(config: Configuration) {
 
   // add src loader for css
   rules.unshift({
-    test: /\.vanilla\.css$/i,
+    test: /\.css$/i,
     use: [
       MiniCssExtractPlugin.loader,
       {
