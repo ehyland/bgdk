@@ -29,24 +29,10 @@
     "url": "git@github.com:ehyland/bgdk.git",
     "directory": "packages/storybook"
   },
-  "peerDependencies": {
-    "@storybook/addon-actions": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/builder-webpack5": "^6.4.9",
-    "@storybook/manager-webpack5": "^6.4.9",
-    "@storybook/react": "^6.4.9",
-    "@vanilla-extract/webpack-plugin": "*",
-    "mini-css-extract-plugin": "*"
-  },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/builder-webpack5": "^6.4.9",
-    "@storybook/manager-webpack5": "^6.4.9",
-    "@storybook/react": "^6.4.9",
-    "@vanilla-extract/webpack-plugin": "^2.1.4",
-    "mini-css-extract-plugin": "^2.4.5"
+    "bgdk": "^0.3.2"
+  },
+  "peerDependencies": {
+    "bgdk": "^0.3.2"
   }
 }

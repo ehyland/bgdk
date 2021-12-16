@@ -1,5 +1,5 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
+import MiniCssExtractPlugin from 'bgdk/alias/mini-css-extract-plugin';
+import { VanillaExtractPlugin } from 'bgdk/alias/vanilla-extract-webpack-plugin';
 import type {
   Configuration,
   RuleSetRule,

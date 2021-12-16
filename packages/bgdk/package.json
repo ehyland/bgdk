@@ -11,13 +11,15 @@
     "/examples/basic/.gitignore",
     "!/examples/*/yarn.yaml",
     "/templates/",
-    "/commands/"
+    "/commands/",
+    "/alias/"
   ],
   "preconstruct": {
     "entrypoints": [
       "cli/index.ts",
       "babel-preset/index.ts",
-      "commands/*.ts"
+      "commands/*.ts",
+      "alias/*.ts"
     ]
   },
   "entrypoints": [
