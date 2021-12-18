@@ -15,15 +15,23 @@ const srcMatchers = [src, /\.css\.ts$/, /\.vanilla\.css$/];
 export function fixStorybookConfig(config: Configuration) {
   const rules = config.module?.rules as RuleSetRule[];
 
-  // exclude app code from default loaders
-  rules.forEach((rule: RuleSetRule) => {
-    const previousExclude = rule.exclude || [];
+  const fixRuleSet = (ruleSet: RuleSetRule[]) => {
+    ruleSet.forEach((rule) => {
+      if (Array.isArray(rule.oneOf)) {
+        fixRuleSet(rule.oneOf);
+      } else {
+        const previousExclude = rule.exclude || [];
+        rule.exclude = [
+          ...(Array.isArray(previousExclude)
+            ? previousExclude
+            : [previousExclude]), // Ensure we don't clobber any existing exclusions
+          ...srcMatchers,
+        ];
+      }
+    });
+  };
 
-    rule.exclude = [
-      ...(Array.isArray(previousExclude) ? previousExclude : [previousExclude]), // Ensure we don't clobber any existing exclusions
-      ...srcMatchers,
-    ];
-  });
+  fixRuleSet(rules);
 
   // add src loader for js
   rules.unshift({
@@ -45,6 +53,13 @@ export function fixStorybookConfig(config: Configuration) {
         },
       },
     ],
+    include: srcMatchers,
+  });
+
+  // add asset loader
+  rules.unshift({
+    test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/,
+    type: 'asset' as any,
     include: srcMatchers,
   });
 
