@@ -14,9 +14,9 @@ jobs:
 
       - uses: ./.github/actions/setup-project
 
-      - run: pnpm lint
-
       - run: pnpm build
+
+      - run: pnpm lint
 
       - uses: ./.github/actions/setup-verdaccio
 
