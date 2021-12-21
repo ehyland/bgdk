@@ -178,7 +178,7 @@ importers:
 
   packages/storybook:
     specifiers:
-      bgdk: ^0.3.4
+      bgdk: ^0.3.3
     devDependencies:
       bgdk: link:../bgdk
 
