@@ -1,5 +1,12 @@
 # bgdk-basic-example
 
+## 1.0.5
+
+### Patch Changes
+
+- e6ac8c5: fix: set public path in webpack config
+- e6ac8c5: fix: storybook webpack config asset loading
+
 ## 1.0.4
 
 ### Patch Changes
