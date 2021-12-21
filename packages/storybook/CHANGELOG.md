@@ -1,5 +1,15 @@
 # @bgdk/storybook
 
+## 0.2.7
+
+### Patch Changes
+
+- e6ac8c5: fix: set public path in webpack config
+- e6ac8c5: fix: storybook webpack config asset loading
+- Updated dependencies [e6ac8c5]
+- Updated dependencies [e6ac8c5]
+  - bgdk@0.3.4
+
 ## 0.2.6
 
 ### Patch Changes

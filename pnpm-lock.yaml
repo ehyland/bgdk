@@ -48,7 +48,7 @@ importers:
 
   examples/basic:
     specifiers:
-      '@bgdk/storybook': ^0.2.6
+      '@bgdk/storybook': ^0.2.7
       '@storybook/addon-actions': ^6.4.9
       '@storybook/addon-essentials': ^6.4.9
       '@storybook/addon-links': ^6.4.9
@@ -59,7 +59,7 @@ importers:
       '@types/react-dom': ^17.0.11
       '@vanilla-extract/css': ^1.6.8
       '@vanilla-extract/sprinkles': ^1.3.3
-      bgdk: ^0.3.2
+      bgdk: ^0.3.4
       dessert-box: ^0.4.1
       jest: ^27.4.4
       polished: ^4.1.3
@@ -178,7 +178,7 @@ importers:
 
   packages/storybook:
     specifiers:
-      bgdk: ^0.3.2
+      bgdk: ^0.3.4
     devDependencies:
       bgdk: link:../bgdk
 
@@ -13013,7 +13013,7 @@ packages:
       serialize-javascript: 6.0.0
       source-map: 0.6.1
       terser: 5.10.0_acorn@8.6.0
-      webpack: 5.65.0
+      webpack: 5.65.0_webpack-cli@4.9.1
     transitivePeerDependencies:
       - acorn
 
