@@ -8,11 +8,11 @@ cp ./README.md ./packages/storybook/
 
 # copy in the example link
 if [ -e "./packages/bgdk/examples" ]; then
-  rm ./packages/bgdk/examples
+  rm -rf ./packages/bgdk/examples
 fi
 
 if [ -e "./packages/create-bgdk/examples" ]; then
-  rm ./packages/create-bgdk/examples
+  rm -rf ./packages/create-bgdk/examples
 fi
 
 cp -r examples ./packages/bgdk/

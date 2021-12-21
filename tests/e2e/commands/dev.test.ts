@@ -53,7 +53,7 @@ describe('bgdk dev', () => {
   it('serves the built app', async () => {
     const body = await fetch('http://localhost:3000').then((res) => res.text());
 
-    if (!body.includes('<script defer src="main.js">')) {
+    if (!body.includes('<script defer src="/main.js">')) {
       console.log(body);
       throw new Error('Script not found in response');
     }
