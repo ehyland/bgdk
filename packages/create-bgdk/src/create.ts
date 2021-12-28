@@ -80,9 +80,7 @@ async function removeStorybook(opts: { outputPath: string }) {
     absolute: true,
   });
 
-  for (const storyFile of storyFiles) {
-    await fs.rm(storyFile);
-  }
+  await Promise.all(storyFiles.map((file) => fs.rm(file)));
 }
 
 function deleteStorybookFields(object: Record<string, string>) {
