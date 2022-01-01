@@ -10,7 +10,9 @@ jobs:
     env:
       CI: true
     steps:
-      - uses: ehyland/bgdk/.github/actions/setup-project@$GITHUB_SHA
+      - uses: actions/checkout@main
+
+      - uses: ./.github/actions/setup-project
 
       - run: pnpm build
 
