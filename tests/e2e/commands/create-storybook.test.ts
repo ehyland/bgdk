@@ -20,7 +20,6 @@ async function cmd(
       PATH: process.env.PATH,
       NPM_CONFIG_USERCONFIG: process.env.NPM_CONFIG_USERCONFIG,
       NODE_AUTH_TOKEN: process.env.NODE_AUTH_TOKEN,
-      SCRATCH_PATH: process.env.SCRATCH_PATH,
     },
     ...options,
   });
@@ -37,7 +36,7 @@ describe('bgdk create app', () => {
     await clearScratchSpace();
 
     return {
-      result: await cmd(`npm init bgdk@dev --storybook ${SCRATCH_PATH}`),
+      result: await cmd(`npm init bgdk@dev -- --storybook ${SCRATCH_PATH}`),
     };
   };
 
