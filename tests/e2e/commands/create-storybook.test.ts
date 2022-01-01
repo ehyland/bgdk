@@ -36,7 +36,9 @@ describe('bgdk create app', () => {
   const setup = async () => {
     await clearScratchSpace();
 
-    return { result: await cmd(`npm init bgdk@dev ${SCRATCH_PATH}`) };
+    return {
+      result: await cmd(`npm init bgdk@dev --storybook ${SCRATCH_PATH}`),
+    };
   };
 
   beforeAll(async () => {
@@ -68,6 +70,7 @@ describe('bgdk create app', () => {
           ".browserslistrc",
           ".gitignore",
           ".prettierrc",
+          ".storybook",
           "CHANGELOG.md",
           "README.md",
           "jest.config.js",

@@ -29,6 +29,8 @@ jobs:
       - name: publish
         run: scripts/publish-snapshot-release
 
+      # without storybook
+
       - run: |
           `pnpm bin`/jest tests/e2e/commands/create.test.ts
         env:
@@ -43,3 +45,20 @@ jobs:
           `pnpm bin`/jest tests/e2e/commands/dev.test.ts
         env:
           SCRATCH_PATH: tests/e2e/workspace/test-1
+
+      # Storybook tests
+
+      - run: |
+          `pnpm bin`/jest tests/e2e/commands/create-storybook.test.ts
+        env:
+          SCRATCH_PATH: tests/e2e/workspace/test-storybook
+
+      - run: |
+          `pnpm bin`/jest tests/e2e/commands/build.test.ts
+        env:
+          SCRATCH_PATH: tests/e2e/workspace/test-storybook
+
+      - run: |
+          `pnpm bin`/jest tests/e2e/commands/dev.test.ts
+        env:
+          SCRATCH_PATH: tests/e2e/workspace/test-storybook
