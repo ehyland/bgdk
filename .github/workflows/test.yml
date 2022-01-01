@@ -21,10 +21,7 @@ jobs:
       - uses: ./.github/actions/setup-verdaccio
 
       - name: Switch registries
-        uses: actions/setup-node@main
-        with:
-          node-version: 14.x
-          registry-url: 'http://localhost:4873'
+        run: npm set "registry" "http://localhost:4873"
 
       - name: publish
         run: scripts/publish-snapshot-release
