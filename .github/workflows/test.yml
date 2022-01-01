@@ -34,31 +34,31 @@ jobs:
       - run: |
           `pnpm bin`/jest tests/e2e/commands/create.test.ts
         env:
-          SCRATCH_PATH: tests/e2e/workspace/test-1
+          SCRATCH_PATH: ../test-workspace/test-1
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/build.test.ts
         env:
-          SCRATCH_PATH: tests/e2e/workspace/test-1
+          SCRATCH_PATH: ../test-workspace/test-1
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/dev.test.ts
         env:
-          SCRATCH_PATH: tests/e2e/workspace/test-1
+          SCRATCH_PATH: ../test-workspace/test-1
 
       # Storybook tests
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/create-storybook.test.ts
         env:
-          SCRATCH_PATH: tests/e2e/workspace/test-storybook
+          SCRATCH_PATH: ../test-workspace/test-storybook
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/build.test.ts
         env:
-          SCRATCH_PATH: tests/e2e/workspace/test-storybook
+          SCRATCH_PATH: ../test-workspace/test-storybook
 
       - run: |
           `pnpm bin`/jest tests/e2e/commands/dev.test.ts
         env:
-          SCRATCH_PATH: tests/e2e/workspace/test-storybook
+          SCRATCH_PATH: ../test-workspace/test-storybook
