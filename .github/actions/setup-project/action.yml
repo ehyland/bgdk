@@ -3,14 +3,13 @@ name: Setup Project
 runs:
   using: 'composite'
   steps:
-    - uses: pnpm/action-setup@v2.0.1
-      with:
-        version: '6.24.2'
-
     - uses: actions/setup-node@main
       with:
-        node-version: 14.x
+        node-version: 16.x
         cache: 'pnpm'
 
-    - run: pnpm i
-      shell: bash
+    - shell: bash
+      run: corepack enable
+
+    - shell: bash
+      run: pnpm i
