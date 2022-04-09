@@ -7,7 +7,7 @@ Or, create react app for vanilla-extract apps.
 
 ## Features
 
-- Preconfigures webpack, babel, jest & storybook for vanilla-extract
+- Pre-configures webpack, babel, jest & storybook for vanilla-extract
 - Dev server
 - Component generator
 - Easily extended through `.babelrc`, `jest.config.js`, `.browserslistrc` & `bgdk.config.js` (coming soon)
