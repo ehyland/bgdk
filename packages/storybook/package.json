@@ -1,6 +1,6 @@
 {
   "name": "@bgdk/storybook",
-  "version": "0.2.7",
+  "version": "1.0.0",
   "description": "Storybook for bgdk apps",
   "main": "dist/bgdk-storybook.cjs.js",
   "files": [
@@ -30,9 +30,9 @@
     "directory": "packages/storybook"
   },
   "devDependencies": {
-    "bgdk": "^0.3.4"
+    "bgdk": "^0.4.0"
   },
   "peerDependencies": {
-    "bgdk": "^0.3.4"
+    "bgdk": "^0.4.0"
   }
 }

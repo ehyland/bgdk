@@ -1,5 +1,16 @@
 # @bgdk/storybook
 
+## 1.0.0
+
+### Minor Changes
+
+- feba4fc: Default create command does not include storybook
+
+### Patch Changes
+
+- Updated dependencies [feba4fc]
+  - bgdk@0.4.0
+
 ## 0.2.7
 
 ### Patch Changes
