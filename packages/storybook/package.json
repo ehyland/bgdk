@@ -30,9 +30,9 @@
     "directory": "packages/storybook"
   },
   "devDependencies": {
-    "bgdk": "^0.4.0"
+    "bgdk": "^0.3.4"
   },
   "peerDependencies": {
-    "bgdk": "^0.4.0"
+    "bgdk": "^0.3.4"
   }
 }
