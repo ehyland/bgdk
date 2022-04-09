@@ -1,5 +1,11 @@
 # bgdk-basic-example
 
+## 1.1.0
+
+### Minor Changes
+
+- feba4fc: Default create command does not include storybook
+
 ## 1.0.5
 
 ### Patch Changes
