@@ -1,6 +1,4 @@
-
-volumes:
-  verdaccio-data:
+version: '3.6'
 
 services:
   verdaccio:
