@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+npm-auth-to-token -u test -p test -e test@test.com -r http://localhost:4873
+

@@ -1,0 +1,18 @@
+
+volumes:
+  verdaccio-data:
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:5.8.0
+    ports:
+      - 4873:4873
+    volumes:
+      - './configs/verdaccio/config.yaml:/verdaccio/conf/config.yaml'
+  
+  app:
+    image: $DOCKER_IMAGE
+    command: sleep infinity
+    network_mode: service:verdaccio
+    depends_on:
+      - verdaccio

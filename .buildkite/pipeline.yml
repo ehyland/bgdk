@@ -1,0 +1,16 @@
+env:
+  DOCKER_IMAGE: local/bgdk-test:$BUILDKITE_BUILD_NUMBER
+
+x-anchors:
+  run: &run
+    plugins:
+      - docker-compose#v3.9.0:
+          run: app
+
+steps:
+  - command: scripts/ci/build-docker-image $DOCKER_IMAGE
+
+  - wait
+
+  - <<: *run
+    command: scripts/ci/run-e2e-test

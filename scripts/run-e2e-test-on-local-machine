@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+export BUILDKITE_BUILD_NUMBER="000"
+export DOCKER_IMAGE="local/bgdk-test:$BUILDKITE_BUILD_NUMBER"
+
+# build image
+scripts/ci/build-docker-image $DOCKER_IMAGE
+
+# start verdaccio
+docker-compose up -d
+
+# run tests
+# docker-compose run --rm app scripts/ci/run-e2e-test
+docker-compose exec app scripts/ci/run-e2e-test
