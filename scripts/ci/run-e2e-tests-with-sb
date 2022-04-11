@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+# create user
+./scripts/ci/setup-verdaccio-user
+
+# set registry
+npm config set registry http://localhost:4873/
+
+# publish dev release
+./scripts/publish-snapshot-release
+
+# test with storybook
+SCRATCH_PATH="$HOME/with-storybook" \
+  `pnpm bin`/jest tests/e2e/commands/create-storybook.test.ts
+
+SCRATCH_PATH="$HOME/with-storybook" \
+  `pnpm bin`/jest tests/e2e/commands/build.test.ts
+
+SCRATCH_PATH="$HOME/with-storybook" \
+  `pnpm bin`/jest tests/e2e/commands/dev.test.ts

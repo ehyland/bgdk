@@ -12,5 +12,7 @@ scripts/ci/build-docker-image $DOCKER_IMAGE
 docker-compose up -d
 
 # run tests
-# docker-compose run --rm app scripts/ci/run-e2e-test
-docker-compose exec app scripts/ci/run-e2e-test
+# docker-compose run --rm app scripts/ci/run-e2e-tests-with-sb
+# docker-compose run --rm app scripts/ci/run-e2e-tests-without-sb
+docker-compose exec app scripts/ci/run-e2e-tests-with-sb
+docker-compose exec app scripts/ci/run-e2e-tests-without-sb

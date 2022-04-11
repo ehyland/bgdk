@@ -13,4 +13,7 @@ steps:
   - wait
 
   - <<: *run
-    command: scripts/ci/run-e2e-test
+    command: scripts/ci/run-e2e-tests-with-sb
+  
+  - <<: *run
+    command: scripts/ci/run-e2e-tests-without-sb
