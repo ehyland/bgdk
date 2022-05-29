@@ -10,7 +10,7 @@
   "author": "Eamon Hyland <ehyland90@gmail.com>",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@6.24.3",
+  "packageManager": "pnpm@6.32.19",
   "scripts": {
     "dev": "preconstruct dev",
     "test": "pnpm lint",
