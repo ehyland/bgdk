@@ -181,7 +181,7 @@ importers:
   packages/storybook:
     specifiers:
       bgdk: ^0.4.0
-      webpack: '*'
+      webpack: ^5.73.0
     devDependencies:
       bgdk: link:../bgdk
       webpack: 5.73.0
