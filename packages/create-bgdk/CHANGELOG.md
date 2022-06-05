@@ -1,5 +1,11 @@
 # create-bgdk
 
+## 0.1.1
+
+### Patch Changes
+
+- 4385692: Update deps
+
 ## 0.1.0
 
 ### Minor Changes

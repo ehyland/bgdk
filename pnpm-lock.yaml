@@ -50,7 +50,7 @@ importers:
 
   examples/basic:
     specifiers:
-      '@bgdk/storybook': ^1.0.0
+      '@bgdk/storybook': ^1.0.1
       '@storybook/addon-actions': ^6.5.6
       '@storybook/addon-essentials': ^6.5.6
       '@storybook/addon-links': ^6.5.6
@@ -61,7 +61,7 @@ importers:
       '@types/react-dom': ^18.0.5
       '@vanilla-extract/css': ^1.7.1
       '@vanilla-extract/sprinkles': ^1.4.1
-      bgdk: ^0.4.0
+      bgdk: ^0.4.1
       dessert-box: ^0.4.1
       jest: ^28.1.0
       polished: ^4.2.2
@@ -180,7 +180,7 @@ importers:
 
   packages/storybook:
     specifiers:
-      bgdk: ^0.4.0
+      bgdk: ^0.4.1
       webpack: ^5.73.0
     devDependencies:
       bgdk: link:../bgdk
