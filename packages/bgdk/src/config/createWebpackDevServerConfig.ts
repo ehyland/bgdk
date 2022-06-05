@@ -1,12 +1,12 @@
 import type { Configuration } from 'webpack-dev-server';
-// import * as paths from './paths';
 
 export function createWebpackDevServerConfig(): Configuration {
   return {
     open: false,
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3000,
     hot: true,
+    historyApiFallback: true,
     devMiddleware: {
       stats: {
         preset: 'errors-warnings',
