@@ -16,26 +16,25 @@
   },
   "devDependencies": {
     "@bgdk/storybook": "^1.0.0",
-    "@storybook/addon-actions": "^6.4.20",
-    "@storybook/addon-essentials": "^6.4.20",
-    "@storybook/addon-links": "^6.4.20",
-    "@storybook/builder-webpack5": "^6.4.20",
-    "@storybook/manager-webpack5": "^6.4.20",
-    "@storybook/react": "^6.4.20",
+    "@storybook/addon-actions": "^6.5.6",
+    "@storybook/addon-essentials": "^6.5.6",
+    "@storybook/addon-links": "^6.5.6",
+    "@storybook/builder-webpack5": "^6.5.6",
+    "@storybook/manager-webpack5": "^6.5.6",
+    "@storybook/react": "^6.5.6",
     "bgdk": "^0.4.0",
-    "jest": "^27.5.1",
-    "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3"
+    "jest": "^28.1.0",
+    "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@types/react": "^17.0.44",
-    "@types/react-dom": "^17.0.15",
-    "@vanilla-extract/css": "^1.6.8",
-    "@vanilla-extract/sprinkles": "^1.4.0",
+    "@types/react": "^18.0.11",
+    "@types/react-dom": "^18.0.5",
+    "@vanilla-extract/css": "^1.7.1",
+    "@vanilla-extract/sprinkles": "^1.4.1",
     "dessert-box": "^0.4.1",
     "polished": "^4.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "sade": "^1.8.1"
   }
 }
