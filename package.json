@@ -10,7 +10,7 @@
   "author": "Eamon Hyland <ehyland90@gmail.com>",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@6.24.3",
+  "packageManager": "pnpm@7.1.8",
   "scripts": {
     "dev": "preconstruct dev",
     "test": "pnpm lint",
@@ -36,25 +36,26 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.22.0",
     "@manypkg/cli": "^0.19.1",
     "@preconstruct/cli": "^2.1.5",
-    "@types/jest": "^27.4.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^28.1.1",
     "@types/ms": "^0.7.31",
+    "@types/node-fetch": "^2.6.1",
     "execa": "^5.1.1",
-    "fs-extra": "^10.0.1",
-    "jest": "^27.5.1",
-    "jest-watch-typeahead": "^1.0.0",
+    "fs-extra": "^10.1.0",
+    "jest": "^28.1.0",
+    "jest-watch-typeahead": "^1.1.0",
     "ms": "^2.1.3",
     "node-fetch": "^2.6.7",
     "prettier": "^2.6.2",
     "strip-ansi": "^6.0.1",
-    "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3"
+    "typescript": "^4.7.3"
   }
 }
