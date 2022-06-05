@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import { log } from './log';
 import chalk from 'chalk';
-import globby from 'globby';
+import { globby } from 'globby';
 
 interface Options {
   appPath: string;
