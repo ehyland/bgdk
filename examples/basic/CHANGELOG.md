@@ -1,5 +1,11 @@
 # bgdk-basic-example
 
+## 1.1.1
+
+### Patch Changes
+
+- 4385692: Update deps
+
 ## 1.1.0
 
 ### Minor Changes

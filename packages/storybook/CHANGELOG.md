@@ -1,5 +1,13 @@
 # @bgdk/storybook
 
+## 1.0.1
+
+### Patch Changes
+
+- 4385692: Update deps
+- Updated dependencies [4385692]
+  - bgdk@0.4.1
+
 ## 1.0.0
 
 ### Minor Changes
