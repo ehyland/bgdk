@@ -1,5 +1,12 @@
 # @bgdk/storybook
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [c5094fe]
+  - bgdk@1.2.0
+
 ## 1.0.1
 
 ### Patch Changes
