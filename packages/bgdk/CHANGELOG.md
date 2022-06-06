@@ -1,5 +1,11 @@
 # bgdk
 
+## 1.2.0
+
+### Minor Changes
+
+- c5094fe: Support SPA client side routing
+
 ## 0.4.1
 
 ### Patch Changes
