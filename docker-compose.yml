@@ -21,17 +21,4 @@ services:
       dockerfile: tests/e2e/Dockerfile.builder
     volumes:
       - ./tests:/app/tests
-      # - ./packages:/app/packages
     command: sleep infinity
-
-  # # NodeJS test environment
-  # tester:
-  #   build:
-  #     dockerfile: test/e2e/Dockerfile.tester
-  #     args:
-  #       - NODE_TEST_VERSION=${NODE_TEST_VERSION}
-  #   network_mode: service:registry
-  #   environment:
-  #     - LOCAL_NPM_REGISTRY=http://localhost:48733/
-  #   volumes:
-  #     - ./test:/app/test
