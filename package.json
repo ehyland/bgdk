@@ -13,7 +13,7 @@
   "packageManager": "pnpm@7.12.1",
   "scripts": {
     "dev": "preconstruct dev",
-    "test": "pnpm lint",
+    "test": "scripts/test-e2e",
     "lint": "manypkg check && prettier --check . && tsc --noEmit",
     "format": "prettier --write .",
     "build": "preconstruct build",

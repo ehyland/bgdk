@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+cd "$(dirname $0)/.."
+
+export VERDACCIO_UID=`id -u`
+export VERDACCIO_PORT="48733"
+
+# cleanup pn exit
+function clean_up {
+  docker-compose down
+}
+trap clean_up EXIT
+
+# Start registry
+docker-compose up --build -d
+
+# Build & publish
+docker-compose exec builder scripts/publish-snapshot-release
+
+# Run Test
+docker-compose run -e TEST_WORKSPACE=/test-workspace builder node_modules/.bin/jest

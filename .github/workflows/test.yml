@@ -14,48 +14,7 @@ jobs:
 
       - uses: ./.github/actions/setup-project
 
-      - run: pnpm build
-
       - run: pnpm lint
 
-      - uses: ./.github/actions/setup-verdaccio
-
-      - name: Switch registries
-        run: npm set "registry" "http://localhost:4873"
-
-      - name: publish
-        run: scripts/publish-snapshot-release
-
-      # without storybook
-
       - run: |
-          `pnpm bin`/jest tests/e2e/commands/create.test.ts
-        env:
-          SCRATCH_PATH: ../test-workspace/test-1
-
-      - run: |
-          `pnpm bin`/jest tests/e2e/commands/build.test.ts
-        env:
-          SCRATCH_PATH: ../test-workspace/test-1
-
-      - run: |
-          `pnpm bin`/jest tests/e2e/commands/dev.test.ts
-        env:
-          SCRATCH_PATH: ../test-workspace/test-1
-
-      # Storybook tests
-
-      - run: |
-          `pnpm bin`/jest tests/e2e/commands/create-storybook.test.ts
-        env:
-          SCRATCH_PATH: ../test-workspace/test-storybook
-
-      - run: |
-          `pnpm bin`/jest tests/e2e/commands/build.test.ts
-        env:
-          SCRATCH_PATH: ../test-workspace/test-storybook
-
-      - run: |
-          `pnpm bin`/jest tests/e2e/commands/dev.test.ts
-        env:
-          SCRATCH_PATH: ../test-workspace/test-storybook
+          `pnpm bin`/jest
