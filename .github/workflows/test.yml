@@ -14,6 +14,8 @@ jobs:
 
       - uses: ./.github/actions/setup-project
 
+      - run: pnpm build
+
       - run: pnpm lint
 
       - run: scripts/test-e2e
