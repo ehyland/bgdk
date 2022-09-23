@@ -19,5 +19,7 @@ runs:
     - shell: bash
       run: corepack enable
 
+    - uses: ehyland/actions/install-docker-compose-v2
+
     - shell: bash
       run: pnpm i
