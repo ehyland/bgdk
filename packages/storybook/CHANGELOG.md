@@ -1,5 +1,16 @@
 # @bgdk/storybook
 
+## 3.0.0
+
+### Minor Changes
+
+- 3c02528: Allow dev server port to be set with BGDK_DEV_PORT
+
+### Patch Changes
+
+- Updated dependencies [3c02528]
+  - bgdk@1.3.0
+
 ## 2.0.0
 
 ### Patch Changes
