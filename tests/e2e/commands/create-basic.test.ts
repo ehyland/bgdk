@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import ms from 'ms';
-import { ResolveType, paths, cmd } from '../test-utils';
+import { cmd, ResolveType, paths } from '../test-utils';
 
 jest.setTimeout(ms('5 minutes'));
 
@@ -24,30 +24,22 @@ describe('bgdk create app', () => {
     expect(packageStat.isFile()).toBe(true);
   });
 
-  describe('yarn install', () => {
-    beforeAll(async () => {
-      await cmd(`yarn install`, {
-        cwd: CTX_PATH,
-      });
-    });
-
-    it('installs successfully', async () => {
-      expect((await fs.readdir(CTX_PATH)).sort()).toMatchInlineSnapshot(`
-        [
-          ".babelrc",
-          ".browserslistrc",
-          ".gitignore",
-          ".prettierrc",
-          "CHANGELOG.md",
-          "README.md",
-          "jest.config.js",
-          "node_modules",
-          "package.json",
-          "src",
-          "tsconfig.json",
-          "yarn.lock",
-        ]
-      `);
-    });
+  it('installs successfully', async () => {
+    expect((await fs.readdir(CTX_PATH)).sort()).toMatchInlineSnapshot(`
+      [
+        ".babelrc",
+        ".browserslistrc",
+        ".gitignore",
+        ".prettierrc",
+        "CHANGELOG.md",
+        "README.md",
+        "jest.config.js",
+        "node_modules",
+        "package.json",
+        "src",
+        "tsconfig.json",
+        "yarn.lock",
+      ]
+    `);
   });
 });

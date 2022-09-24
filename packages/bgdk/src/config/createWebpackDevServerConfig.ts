@@ -4,7 +4,7 @@ export function createWebpackDevServerConfig(): Configuration {
   return {
     open: false,
     host: '0.0.0.0',
-    port: 3000,
+    port: process.env.BGDK_DEV_PORT ?? 3000,
     hot: true,
     historyApiFallback: true,
     devMiddleware: {

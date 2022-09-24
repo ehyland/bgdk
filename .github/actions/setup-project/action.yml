@@ -1,5 +1,6 @@
 # Based on https://github.com/verdaccio/github-actions/tree/master/publish
 name: Setup Project
+description: Installs CI dependencies
 runs:
   using: 'composite'
   steps:
@@ -18,6 +19,8 @@ runs:
 
     - shell: bash
       run: corepack enable
+
+    - uses: ehyland/actions/install-docker-compose-v2@main
 
     - shell: bash
       run: pnpm i

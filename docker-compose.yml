@@ -1,0 +1,24 @@
+volumes:
+  verdaccio-data:
+
+services:
+  # Local NPM registry
+  registry:
+    image: ehyland/verdaccio-test:5.15.3
+    container_name: registry
+    hostname: registry
+    environment:
+      - VERDACCIO_UID
+      - VERDACCIO_PORT
+    volumes:
+      - verdaccio-data:/verdaccio/storage/data
+    ports:
+      - ${VERDACCIO_PORT}:${VERDACCIO_PORT}
+
+  # For building and publishing to a local registry
+  builder:
+    build:
+      dockerfile: tests/e2e/Dockerfile.builder
+    volumes:
+      - ./tests:/app/tests
+    command: sleep infinity

@@ -1,26 +1,23 @@
-import execa from 'execa';
 import fetch from 'node-fetch';
-import path from 'path';
-import fs from 'fs-extra';
 import ms from 'ms';
 import stripAnsi from 'strip-ansi';
-import { ResolveType, scratchAppExists, SCRATCH_PATH } from '../test-utils';
+import { cmd, paths, ResolveType } from '../test-utils';
 
 jest.setTimeout(ms('5 minutes'));
 
 describe('bgdk dev', () => {
+  const CTX_PATH = paths.storybook.dev;
+  const DEV_PORT = '3002';
+
   let ctx: ResolveType<typeof setup>;
 
   const setup = async () => {
-    if (!(await scratchAppExists())) {
-      throw new Error('Scratch app not found');
-    }
-
-    const child = execa.command(`yarn dev`, {
-      all: true,
+    const child = cmd(`yarn dev`, {
       detached: true,
-      encoding: 'utf8',
-      cwd: SCRATCH_PATH,
+      cwd: CTX_PATH,
+      env: {
+        BGDK_DEV_PORT: DEV_PORT,
+      },
     });
 
     child.all?.pipe(process.stderr);
@@ -51,7 +48,9 @@ describe('bgdk dev', () => {
   });
 
   it('serves the built app', async () => {
-    const body = await fetch('http://localhost:3000').then((res) => res.text());
+    const body = await fetch(`http://localhost:${DEV_PORT}`).then((res) =>
+      res.text(),
+    );
 
     if (!body.includes('<script defer src="/main.js">')) {
       console.log(body);
