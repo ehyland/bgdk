@@ -10,6 +10,8 @@ jobs:
       CI: true
     steps:
       - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
 
       - uses: ./.github/actions/setup-project
 

@@ -1,5 +1,6 @@
 # Based on https://github.com/verdaccio/github-actions/tree/master/publish
 name: Setup Project
+description: Installs CI dependencies
 runs:
   using: 'composite'
   steps:
