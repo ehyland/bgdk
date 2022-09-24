@@ -1,5 +1,11 @@
 # bgdk
 
+## 1.3.0
+
+### Minor Changes
+
+- 3c02528: Allow dev server port to be set with BGDK_DEV_PORT
+
 ## 1.2.0
 
 ### Minor Changes
