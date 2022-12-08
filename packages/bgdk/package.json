@@ -64,7 +64,7 @@
     "babel-loader": "^9.1.0",
     "chalk": "^4.1.2",
     "css-loader": "^6.7.2",
-    "execa": "^5.1.1",
+    "execa": "^6.0.0",
     "fs-extra": "^11.1.0",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
