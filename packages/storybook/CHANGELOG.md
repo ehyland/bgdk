@@ -1,5 +1,16 @@
 # @bgdk/storybook
 
+## 4.0.0
+
+### Minor Changes
+
+- 1d8be7b: Update dependencies
+
+### Patch Changes
+
+- Updated dependencies [1d8be7b]
+  - bgdk@1.4.0
+
 ## 3.0.0
 
 ### Minor Changes
