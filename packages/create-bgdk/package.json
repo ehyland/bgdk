@@ -1,6 +1,6 @@
 {
   "name": "create-bgdk",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Bootstrap apps with BGDK",
   "main": "dist/create-bgdk.cjs.js",
   "files": [

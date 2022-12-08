@@ -1,5 +1,11 @@
 # bgdk-basic-example
 
+## 1.4.0
+
+### Minor Changes
+
+- 1d8be7b: Update dependencies
+
 ## 1.3.0
 
 ### Minor Changes
