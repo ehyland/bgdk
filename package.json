@@ -44,7 +44,7 @@
     "@changesets/cli": "^2.25.2",
     "@manypkg/cli": "^0.19.2",
     "@preconstruct/cli": "^2.2.2",
-    "@types/fs-extra": "^9.0.13",
+    "@types/fs-extra": "^11.0.0",
     "@types/jest": "^29.2.4",
     "@types/ms": "^0.7.31",
     "@types/node-fetch": "^2.6.2",

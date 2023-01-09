@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@types/babel__core": "^7.1.20",
-    "@types/fs-extra": "^9.0.13",
+    "@types/fs-extra": "^11.0.0",
     "@types/lodash": "^4.14.191",
     "@types/mini-css-extract-plugin": "^2.5.1",
     "@types/sade": "^1.7.4",
