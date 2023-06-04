@@ -62,7 +62,7 @@
     "@vanilla-extract/babel-plugin": "^1.2.0",
     "@vanilla-extract/webpack-plugin": "^2.2.0",
     "babel-loader": "^9.1.0",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "css-loader": "^6.7.2",
     "execa": "^5.1.1",
     "fs-extra": "^11.1.0",
