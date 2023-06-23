@@ -20,7 +20,7 @@ jobs:
       - uses: ./.github/actions/setup-project
 
       - name: Create release PR or publish to npm
-        uses: changesets/action@v1.4.1
+        uses: changesets/action@v1.4.5
         with:
           version: pnpm ci:version
           publish: pnpm ci:release
