@@ -22,7 +22,7 @@ importers:
       jest-watch-typeahead: ^2.2.1
       ms: ^2.1.3
       node-fetch: ^2.6.7
-      prettier: ^2.8.0
+      prettier: ^3.0.0
       strip-ansi: ^6.0.1
       typescript: ^4.9.3
     dependencies:
@@ -44,7 +44,7 @@ importers:
       jest-watch-typeahead: 2.2.1_jest@29.3.1
       ms: 2.1.3
       node-fetch: 2.6.7
-      prettier: 2.8.0
+      prettier: 3.0.0
       strip-ansi: 6.0.1
       typescript: 4.9.3
 
@@ -116,7 +116,7 @@ importers:
       html-webpack-plugin: ^5.5.0
       lodash: ^4.17.21
       mini-css-extract-plugin: ^2.7.2
-      prettier: ^2.8.0
+      prettier: ^3.0.0
       react-refresh: ^0.14.0
       sade: ^1.8.1
       serve: ^14.1.2
@@ -144,7 +144,7 @@ importers:
       html-webpack-plugin: 5.5.0_webpack@5.75.0
       lodash: 4.17.21
       mini-css-extract-plugin: 2.7.2_webpack@5.75.0
-      prettier: 2.8.0
+      prettier: 3.0.0
       react-refresh: 0.14.0
       sade: 1.8.1
       serve: 14.1.2
@@ -8400,7 +8400,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -11692,6 +11692,12 @@ packages:
   /prettier/2.8.0:
     resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
+
+  /prettier/3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: false
 
