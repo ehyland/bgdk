@@ -2,8 +2,13 @@
 
 Or, create react app for vanilla-extract apps.
 
-> **Note:** This project is a work in progress, see [TODO](#todo) to track progress.  
-> All feedback is welcome :)
+## Project Archived
+
+I started this project when setting up vanilla-extract was not a simple task.
+
+Since then the vanilla extract team have built many great framework and bundler integrations.
+
+I'd recommend using one of them instead of bgdk.
 
 ## Features
 
